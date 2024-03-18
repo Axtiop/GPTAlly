@@ -46,7 +46,18 @@
         .container-box{
             background-color: #ecf0f1;
         }
-        
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap; /* Prevent line breaks */
+            margin: 0 auto; /* Center text horizontally */
+            padding: 20px;
+            font-family: monospace; /* Use a monospace font for typewriter effect */
+            color: white;
+        }
+        .container-box-other{
+            background-color: #34495e;
+        }
+                    
     </style>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -109,10 +120,10 @@
         </div>
     </div>
 
-    <div class="container mt-2 border rounded p-4 container-box bg-light">
+    <div class="container mt-2 border rounded p-4 container-box-other ">
         <div class="row justify-content-center">
-            <div class="col justify-content-center">
-                New text
+            <div class="typewriter">
+                <h3 id="typewriter-text"></h3>
             </div>
         </div>
     </div>
@@ -235,6 +246,7 @@
             stopBtn.textContent = "Pause";
             startBtn.textContent = "Resume";
         }
+        start_typing();
         updateChart();
         playVideo();
         interval = setInterval(updateChart, 100);
@@ -264,6 +276,7 @@
             stopBtn.textContent = "Pause";
             startBtn.textContent = "Display Data";
             // there the data should also be stopped
+            remove_writing();
             clearChartData();
             clearInterval(interval);
             restartVideo();
@@ -311,6 +324,68 @@
     function restartVideo() {
     video.currentTime = 0; // Set current time to 0 (start of the video)
     }
+
+    const text = "Hello world! This is a typewriter effect."; // Text to be displayed
+    const delay = 80; // Delay between each character (in milliseconds)
+
+    const textElement = document.getElementById('typewriter-text');
+
+    let index = 0;
+
+    function type() {
+    if (index < text.length) {
+        textElement.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, delay);
+    } 
+    }
+
+    function waiting_typing(){
+        textElement.innerHTML = '_';
+        waiting_interval = setInterval(() => {
+        // Add or remove the cursor effect
+        if (textElement.innerHTML.endsWith('|')) {
+            textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+        } else {
+            textElement.innerHTML += '|';
+        }
+    }, 500);
+    }
+
+    // Start the typewriter effect when the page loads
+    function start_typing() {
+    clearInterval(waiting_interval);
+    textElement.innerHTML = ''; // Clear existing text
+    type();
+    global_interval = setInterval(() => {
+        // Add or remove the cursor effect
+        if(index >= text.length){
+            if (textElement.innerHTML.endsWith('|')) {
+                textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+            } else {
+                textElement.innerHTML += '|';
+            }
+        }
+    }, 500); // Adjust the blinking speed of the cursor (in milliseconds)
+
+    };
+
+    function remove_writing() {
+        clearInterval(global_interval);
+        const removeInterval = setInterval(() => {
+        if (textElement.innerHTML.length > 0) {
+            textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+        } else {
+            clearInterval(removeInterval); // Clear interval when text is empty
+            index = 0;
+            waiting_typing();
+        }
+        }, delay);
+    }
+
+    window.onload = function() {
+        waiting_typing();
+    };  
 </script>
 
 
