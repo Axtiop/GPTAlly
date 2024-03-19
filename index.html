@@ -9,10 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
-    
-    <!-- Read CSV -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
           
     <title>Thesis Website</title>
 </head>
@@ -59,7 +55,14 @@
         .container-box-other{
             background-color: #34495e;
         }
-                    
+
+            @media (max-width: 576px) { /* Adjust for smaller devices */
+                .fixed-width-btn {
+                    width: 100%; /* Make buttons full width on smaller devices */
+                    margin-bottom: 5px; /* Add some space between buttons */
+                }
+            }   
+           
     </style>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -114,7 +117,7 @@
                 <div class="d-flex flex-column justify-content-center align-items-center mt-3"> <!-- Changed to flex-column -->
                     <button id="stopDataBtn" class="btn btn-warning mb-3" style="width: 60%;">Pause</button> <!-- Moved button inside the flex container -->
                     <video id="myVideo" src="data\L1N1\L2N1\L3N1\L4N1\L5N1\Video.mp4" class="video">
-                        <source type="video/mp4">
+                        <source type="video/mp4" playsinline>
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -194,11 +197,11 @@
     
     function changeVideoSource(newSource) {
         video.src = newSource;
-        video.load(); // Load the new video source
+        video.load();
     }
 
     changeVideoBtn1.addEventListener('click', function() {
-        videoCounterBtn1 = (videoCounterBtn1 % 2 ) + 1;
+        videoCounterBtn1 = (videoCounterBtn1 % namesBtn1.length ) + 1;
         changeVideoBtn1.textContent = namesBtn1[videoCounterBtn1 - 1]
         newSource = `data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
         changeVideoSource(newSource);
@@ -207,7 +210,7 @@
     });
 
     changeVideoBtn2.addEventListener('click', function() {
-        videoCounterBtn2 = (videoCounterBtn2 % 3 ) + 1;
+        videoCounterBtn2 = (videoCounterBtn2 % namesBtn2.length ) + 1;
         changeVideoBtn2.textContent = namesBtn2[videoCounterBtn2 - 1]
         newSource = `data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
         changeVideoSource(newSource);
@@ -215,7 +218,7 @@
         fetch_data(csvSource);
     });
     changeVideoBtn3.addEventListener('click', function() {
-        videoCounterBtn3 = (videoCounterBtn3 % 2 ) + 1;
+        videoCounterBtn3 = (videoCounterBtn3 % namesBtn3.length ) + 1;
         changeVideoBtn3.textContent = namesBtn3[videoCounterBtn3 - 1]
         newSource = `data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
         changeVideoSource(newSource);
@@ -223,7 +226,7 @@
         fetch_data(csvSource);
     });
     changeVideoBtn4.addEventListener('click', function() {
-        videoCounterBtn4 = (videoCounterBtn4 % 2 ) + 1;
+        videoCounterBtn4 = (videoCounterBtn4 % namesBtn4.length ) + 1;
         changeVideoBtn4.textContent = namesBtn4[videoCounterBtn4 - 1]
         newSource = `data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
         changeVideoSource(newSource);
@@ -231,7 +234,7 @@
         fetch_data(csvSource);
     });
     changeVideoBtn5.addEventListener('click', function() {
-        videoCounterBtn5 = (videoCounterBtn5 % 2 ) + 1;
+        videoCounterBtn5 = (videoCounterBtn5 % namesBtn5.length ) + 1;
         changeVideoBtn5.textContent = namesBtn5[videoCounterBtn5 - 1]
         newSource = `data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
         changeVideoSource(newSource);
@@ -386,13 +389,21 @@
     const textElement = document.getElementById('typewriter-text');
 
     let index = 0;
+    let baseFontSize = 24; // Initial font size for example
 
     function type() {
-    if (index < text.length) {
-        textElement.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(type, delay);
-    } 
+        if (index < text.length) {
+            textElement.textContent += text.charAt(index);
+            index++;
+
+            // Check if the text exceeds the width of the container
+            if (textElement.offsetWidth < textElement.scrollWidth) {
+                // Reduce font size if the text overflows
+                baseFontSize -= 1;
+                textElement.style.fontSize = baseFontSize + "px";
+            }
+            setTimeout(type, delay);
+        }
     }
 
     function waiting_typing(){
@@ -428,13 +439,19 @@
     function remove_writing() {
         clearInterval(global_interval);
         const removeInterval = setInterval(() => {
-        if (textElement.innerHTML.length > 0) {
-            textElement.innerHTML = textElement.innerHTML.slice(0, -1);
-        } else {
-            clearInterval(removeInterval); // Clear interval when text is empty
-            index = 0;
-            waiting_typing();
-        }
+            if (textElement.innerHTML.length > 0) {
+                textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+            } else {
+                clearInterval(removeInterval); // Clear interval when text is empty
+                index = 0;
+                waiting_typing();
+
+                // Reset font size to 24 if it was decreased
+                if (baseFontSize !== 24) {
+                    baseFontSize = 24;
+                    textElement.style.fontSize = baseFontSize + "px";
+                }
+            }
         }, delay);
     }
 
