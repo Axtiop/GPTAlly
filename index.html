@@ -10,8 +10,10 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
     
-
-  
+    <!-- Read CSV -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
+          
     <title>Thesis Website</title>
 </head>
 <body>
@@ -188,7 +190,8 @@
     const namesBtn3 = ['DO < DB', 'DO > DB']; 
     const namesBtn4 = ['SI', 'Path-Planning'];
     const namesBtn5 = ['Prompt 1', 'Prompt 2'];
-
+    let csvSource = `https://axtiop.github.io/GPTGuardian_display/data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+    
     function changeVideoSource(newSource) {
         video.src = newSource;
         video.load(); // Load the new video source
@@ -199,6 +202,8 @@
         changeVideoBtn1.textContent = namesBtn1[videoCounterBtn1 - 1]
         newSource = `data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
         changeVideoSource(newSource);
+        csvSource = `https://axtiop.github.io/GPTGuardian_display/data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+        fetch_data(csvSource);
     });
 
     changeVideoBtn2.addEventListener('click', function() {
@@ -206,24 +211,32 @@
         changeVideoBtn2.textContent = namesBtn2[videoCounterBtn2 - 1]
         newSource = `data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
         changeVideoSource(newSource);
+        csvSource = `https://axtiop.github.io/GPTGuardian_display/data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+        fetch_data(csvSource);
     });
     changeVideoBtn3.addEventListener('click', function() {
         videoCounterBtn3 = (videoCounterBtn3 % 2 ) + 1;
         changeVideoBtn3.textContent = namesBtn3[videoCounterBtn3 - 1]
         newSource = `data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
         changeVideoSource(newSource);
+        csvSource = `https://axtiop.github.io/GPTGuardian_display/data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+        fetch_data(csvSource);
     });
     changeVideoBtn4.addEventListener('click', function() {
         videoCounterBtn4 = (videoCounterBtn4 % 2 ) + 1;
         changeVideoBtn4.textContent = namesBtn4[videoCounterBtn4 - 1]
         newSource = `data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
         changeVideoSource(newSource);
+        csvSource = `https://axtiop.github.io/GPTGuardian_display/data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+        fetch_data(csvSource);
     });
     changeVideoBtn5.addEventListener('click', function() {
         videoCounterBtn5 = (videoCounterBtn5 % 2 ) + 1;
         changeVideoBtn5.textContent = namesBtn5[videoCounterBtn5 - 1]
         newSource = `data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
         changeVideoSource(newSource);
+        csvSource = `https://axtiop.github.io/GPTGuardian_display/data/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+        fetch_data(csvSource);
     });
 
 
@@ -284,6 +297,7 @@
 
     });
 
+    /*  
     function updateChart() {
         if (dataIndex >= 100) {
             data.shift();
@@ -302,7 +316,48 @@
 
         dataIndex++;
     }
+    http://127.0.0.1:5500/data/L1N1/L2N1/L3N1/L4N1/L5N1/data.csv
+    */
+    var speeds = [];
+    var SI = [];
+    function fetch_data(name_csv){
+        speeds = []
+        SI = []
+        fetch(name_csv)
+        .then(response => response.text())
+        .then(data => {
+            // Split the CSV data by lines
+            const rows = data.trim().split('\n');
+            // Parse each row and extract data
+            rows.forEach(row => {
+                const columns = row.split(',');
+                speeds.push(parseFloat(columns[0]));
+                SI.push(parseFloat(columns[1]));
+            });
+        })
+        .catch(error => console.error('Error fetching CSV file:', error));
+    };
 
+    function updateChart() {
+    if (dataIndex >= SI.length) {
+        clearChartData();
+        playVideo();
+    }
+    if (dataIndex >= 100) {
+        data.shift();
+        data2.shift();
+    }
+        data.push(SI[dataIndex]);
+        data2.push(SI[dataIndex]);
+
+        const labels = Array.from({ length: data.length }, (_, i) => (i + 1).toString());
+        myChart.data.labels = labels.map((_, i) => (i + 1 + dataIndex - data.length).toString());
+        myChart.data.datasets[0].data = data;
+        myChart.data.datasets[1].data = data2;
+        myChart.update();
+
+        dataIndex++;
+    }
     function clearChartData() {
         dataIndex = 0;
         data = [];
@@ -383,8 +438,10 @@
         }, delay);
     }
 
+
     window.onload = function() {
         waiting_typing();
+        fetch_data("https://axtiop.github.io/GPTGuardian_display/data/L1N1/L2N1/L3N1/L4N1/L5N1/data.csv");
     };  
 </script>
 
