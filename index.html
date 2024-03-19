@@ -44,6 +44,9 @@
         .container-box{
             background-color: #ecf0f1;
         }
+        .bg-light-nav-custom{
+            background-color: #ecf0f1;
+        }
         .typewriter {
             overflow: hidden;
             white-space: nowrap; /* Prevent line breaks */
@@ -64,7 +67,7 @@
             }   
            
     </style>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light-nav-custom">
         <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -72,13 +75,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Main</a>
+                <a class="nav-link active" aria-current="page" href="#">Decision Making</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Safety</a>
+                <a class="nav-link" href="safety.html">Safety</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Functions</a>
+                <a class="nav-link" href="functions.html">Functions</a>
             </li>
             </ul>
         </div>
@@ -116,8 +119,8 @@
             <div class="col-md-6">
                 <div class="d-flex flex-column justify-content-center align-items-center mt-3"> <!-- Changed to flex-column -->
                     <button id="stopDataBtn" class="btn btn-warning mb-3" style="width: 60%;">Pause</button> <!-- Moved button inside the flex container -->
-                    <video id="myVideo" src="data\L1N1\L2N1\L3N1\L4N1\L5N1\Video.mp4" class="video">
-                        <source type="video/mp4" playsinline>
+                    <video id="myVideo" src="data\L1N1\L2N1\L3N1\L4N1\L5N1\Video.mp4" class="video" playsinline>
+                        <source type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
