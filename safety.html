@@ -313,8 +313,8 @@
         data.shift();
         data2.shift();
     }
-        data.push(speeds[dataIndex]);
-        data2.push(SI[dataIndex]);
+        data.push(SI[dataIndex]);
+        data2.push(speeds[dataIndex]);
 
         const labels = Array.from({ length: data.length }, (_, i) => (i + 1).toString());
         myChart.data.labels = labels.map((_, i) => (i + 1 + dataIndex - data.length).toString());
