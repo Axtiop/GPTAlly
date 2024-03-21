@@ -1,0 +1,51 @@
+.container-box {
+    transition: box-shadow 0.3s ease;
+}
+
+.container-box:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+.video {
+    width: 60%; /* Make both elements fill their container */
+    height: auto; /* Maintain aspect ratio */
+    /*max-width: 60%; /* Ensure they don't exceed container width */
+   /* max-height: 90%; /* Ensure they don't exceed container height */
+}
+.fixed-width-btn {
+    width: 150px; /* Adjust the width as needed */
+}
+.btn-primary {
+    background-color: #2980b9;
+}
+.btn-success {
+    background-color: #27ae60;
+}
+
+.btn-warning{
+    background-color: #f39c12;
+}
+.container-box{
+    background-color: #ecf0f1;
+}
+.bg-light-nav-custom{
+    background-color: #ecf0f1;
+}
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap; /* Prevent line breaks */
+    margin: 0 auto; /* Center text horizontally */
+    padding: 20px;
+    font-family: monospace; /* Use a monospace font for typewriter effect */
+    color: black;
+}
+
+.container-box-other{
+    background-color: #ecf0f1;
+}
+
+    @media (max-width: 576px) { /* Adjust for smaller devices */
+        .fixed-width-btn {
+            width: 100%; /* Make buttons full width on smaller devices */
+            margin-bottom: 5px; /* Add some space between buttons */
+        }
+    }  
