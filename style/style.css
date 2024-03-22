@@ -39,6 +39,9 @@
     color: black;
 }
 
+.img-fluid{
+    width: 80%;
+}
 .container-box-other{
     background-color: #ecf0f1;
 }

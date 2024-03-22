@@ -37,16 +37,16 @@
     <div class="container container-box border rounded p-4 mt-4 ">
         <div class="row justify-content-center">
             <div class="col-auto">
-                <button id="FilePathBtn1" class="btn btn-primary fixed-width-btn" >Picking</button>
+                <button id="FilePathBtn1" class="btn btn-primary fixed-width-btn">Picking</button>
             </div>
             <div class="col-auto">
-                <button id="FilePathBtn2" class="btn btn-primary fixed-width-btn">Short distance</button>
+                <button id="FilePathBtn2" class="btn btn-primary fixed-width-btn">SI</button>
             </div>
             <div class="col-auto">
-                <button id="FilePathBtn3" class="btn btn-primary fixed-width-btn">DO &lt; DB</button>
+                <button id="FilePathBtn3" class="btn btn-primary fixed-width-btn">Short Distance</button>
             </div>
             <div class="col-auto">
-                <button id="FilePathBtn4" class="btn btn-primary fixed-width-btn">SI</button>
+                <button id="FilePathBtn4" class="btn btn-primary fixed-width-btn">Layout</button>
             </div>
             <div class="col-auto">
                 <button id="FilePathBtn5" class="btn btn-primary fixed-width-btn">Prompt 1</button>
@@ -72,6 +72,14 @@
                 -->
                     <h3> Working on those experiences, you should check Safety section it is much more complete !</h3>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-2 border rounded p-4 container-box-other">
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <img id="my_image" src="data_decision/L1N1/L2N1/L3N1/L4N1/L5N1/Image.PNG" class="img-fluid" alt="Responsive image">
             </div>
         </div>
     </div>
@@ -136,14 +144,15 @@
     const changeVideoBtn3 = document.getElementById('FilePathBtn3');
     const changeVideoBtn4 = document.getElementById('FilePathBtn4');
     const changeVideoBtn5 = document.getElementById('FilePathBtn5');
-
+    var img = document.getElementById("my_image");
     let videoCounterBtn1 = 1; let videoCounterBtn2 = 1; let videoCounterBtn3 = 1; let videoCounterBtn4 = 1; let videoCounterBtn5 = 1;
     let newSource =  `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
+    let newImg = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.PNG`;
     const namesBtn1 = ['Picking', 'Placing']; 
-    const namesBtn2 = ['Short dist', 'Moderate dist', 'Long dist']; 
-    const namesBtn3 = ['DO < DB', 'DO > DB']; 
-    const namesBtn4 = ['SI', 'Path-Planning'];
-    const namesBtn5 = ['Prompt 1', 'Prompt 2'];
+    const namesBtn2 = ['SI', 'Path-Planning']; 
+    const namesBtn3 = ['Short dist', 'Moderate dist', 'Long dist']; 
+    const namesBtn4 = ['Layout 1', 'Layout 2', 'Layout 3', 'Layout 4'];
+    const namesBtn5 = ['Prompt 1'];
     let csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
     
     function changeVideoSource(newSource) {
@@ -155,6 +164,7 @@
         videoCounterBtn1 = (videoCounterBtn1 % namesBtn1.length ) + 1;
         changeVideoBtn1.textContent = namesBtn1[videoCounterBtn1 - 1]
         newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
+        img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.PNG`;
         changeVideoSource(newSource);
         csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
         fetch_data(csvSource);
@@ -164,6 +174,7 @@
         videoCounterBtn2 = (videoCounterBtn2 % namesBtn2.length ) + 1;
         changeVideoBtn2.textContent = namesBtn2[videoCounterBtn2 - 1]
         newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
+        img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.PNG`;
         changeVideoSource(newSource);
         csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
         fetch_data(csvSource);
@@ -172,6 +183,7 @@
         videoCounterBtn3 = (videoCounterBtn3 % namesBtn3.length ) + 1;
         changeVideoBtn3.textContent = namesBtn3[videoCounterBtn3 - 1]
         newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
+        img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.PNG`;
         changeVideoSource(newSource);
         csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
         fetch_data(csvSource);
@@ -180,6 +192,7 @@
         videoCounterBtn4 = (videoCounterBtn4 % namesBtn4.length ) + 1;
         changeVideoBtn4.textContent = namesBtn4[videoCounterBtn4 - 1]
         newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
+        img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.PNG`;
         changeVideoSource(newSource);
         csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
         fetch_data(csvSource);
@@ -188,6 +201,7 @@
         videoCounterBtn5 = (videoCounterBtn5 % namesBtn5.length ) + 1;
         changeVideoBtn5.textContent = namesBtn5[videoCounterBtn5 - 1]
         newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
+        img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.PNG`;
         changeVideoSource(newSource);
         csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
         fetch_data(csvSource);
