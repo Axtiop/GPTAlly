@@ -6,21 +6,17 @@
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 .video {
-    height: 220px;
+    height: 300px; /* Maintain aspect ratio */
     width: auto; /* Make both elements fill their container */
-     /* Maintain aspect ratio */
     /*max-width: 60%; /* Ensure they don't exceed container width */
    /* max-height: 90%; /* Ensure they don't exceed container height */
 }
 .fixed-width-btn {
     width: 150px; /* Adjust the width as needed */
+    font-size: 24px;
 }
 .btn-primary {
     background-color: #2980b9;
-}
-
-.side_btn{
-    width: 80px;
 }
 .btn-success {
     background-color: #27ae60;
@@ -44,6 +40,10 @@
     color: black;
 }
 
+.img-fluid{
+    width: 80%;
+    padding: 5px;
+}
 .container-box-other{
     background-color: #ecf0f1;
 }
@@ -52,5 +52,14 @@
         .fixed-width-btn {
             width: 100%; /* Make buttons full width on smaller devices */
             margin-bottom: 5px; /* Add some space between buttons */
+        }
+        .video {
+            height: 200px; /* Maintain aspect ratio */
+            width: auto; /* Make both elements fill their container */
+            /*max-width: 60%; /* Ensure they don't exceed container width */
+           /* max-height: 90%; /* Ensure they don't exceed container height */
+        }
+        .img-fluid{
+            width: 100%;
         }
     }  

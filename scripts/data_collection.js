@@ -36,42 +36,67 @@ const myChart = new Chart(ctx, {
 let video = document.getElementById('myVideo');
 const changeVideoBtn1 = document.getElementById('FilePathBtn1');
 const changeVideoBtn2 = document.getElementById('FilePathBtn2');
+var img = document.getElementById("my_image");
+const title = document.getElementById('experiment_id');
 
-let videoCounterBtn1 = 1; let videoCounterBtn2 = 1
-let newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
-const namesBtn1 = ['Experiment 1', 'Experiment 2', 'Experiment 3']; 
-const namesBtn2 = ['GPT factor: 0.5', 'GPT factor: 1.0', 'GPT factor: 1.5']; 
-const text_list = ["Prompt: I feel very confident around robots", "Prompt: I feel neutral around robots", "Prompt: I feel very scared around robots"];
-let csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
+let videoCounterBtn1 = 1; let videoCounterBtn2 = 1; let videoCounterBtn3 = 1; let videoCounterBtn4 = 1; let videoCounterBtn5 = 1;
+let newSource =  `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
+let newImg = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
+let csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
 
 function changeVideoSource(newSource) {
-    remove_writing();
-    clearChartData();
-    clearInterval(interval);
-    restartVideo();
     video.src = newSource;
     video.load();
 }
 
 changeVideoBtn1.addEventListener('click', function() {
-    videoCounterBtn1 = (videoCounterBtn1 % namesBtn1.length ) + 1;
-    changeVideoBtn1.textContent = namesBtn1[videoCounterBtn1 - 1]
-    newSource = `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
-    changeVideoSource(newSource);
-    csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
-    fetch_data(csvSource);
+    videoCounterBtn4 = (videoCounterBtn4 - 1) || 4;
+
+    // Decrement counter 3 if counter 4 rolled over to 0
+    if (videoCounterBtn4 === 4) {
+        videoCounterBtn3 = (videoCounterBtn3 - 1) || 3;
+    
+        // Decrement counter 2 if counter 3 rolled over to 0
+        if (videoCounterBtn3 === 3) {
+            videoCounterBtn2 = (videoCounterBtn2 - 1) || 2;
+    
+            // Decrement counter 1 if counter 2 rolled over to 0
+            if (videoCounterBtn2 === 2) {
+                videoCounterBtn1 = (videoCounterBtn1 - 1) || 2;
+            }
+        }
+    }
+    experiment_id.textContent = `Experiment: ${(videoCounterBtn1-1)*24 + (videoCounterBtn2-1)*12 + (videoCounterBtn3-1)*4 + videoCounterBtn4}`;
+    newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
+    img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
+    //changeVideoSource(newSource);
+    //csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+    //fetch_data(csvSource);
 });
 
 changeVideoBtn2.addEventListener('click', function() {
+    prevideoCounterBtn4 = (videoCounterBtn4 % 4 )
+    videoCounterBtn4 = prevideoCounterBtn4 + 1;
+    if(prevideoCounterBtn4 === 0){
+        prevideoCounterBtn3 = (videoCounterBtn3 % 3 )
+        videoCounterBtn3 = prevideoCounterBtn3 + 1;
+        if(prevideoCounterBtn3 === 0){
+            prevideoCounterBtn2 = (videoCounterBtn2 % 2 )
+            videoCounterBtn2 = prevideoCounterBtn2 + 1;
+            if(prevideoCounterBtn2 === 0){
+                videoCounterBtn1 = (videoCounterBtn1 % 2 ) + 1;
+            }
+        }
+    }
+    experiment_id.textContent = `Experiment: ${(videoCounterBtn1-1)*24 + (videoCounterBtn2-1)*12 + (videoCounterBtn3-1)*4 + videoCounterBtn4}`;
+    newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
+    img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
     
-    videoCounterBtn2 = (videoCounterBtn2 % namesBtn2.length ) + 1;
-    changeVideoBtn2.textContent = namesBtn2[videoCounterBtn2 - 1]
-    text = text_list[videoCounterBtn2 - 1]
-    newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
-    changeVideoSource(newSource);
-    csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
-    fetch_data(csvSource);
+    //changeVideoSource(newSource);
+    //csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+    //fetch_data(csvSource);
 });
+
 
 let CounterBtn1 = 1; let CounterBtn2 = 1
 startBtn = document.getElementById('displayDataBtn');
@@ -160,7 +185,7 @@ if (dataIndex >= 100) {
     data2.shift();
 }
     data.push(SI[dataIndex]);
-    data2.push(speeds[dataIndex]);
+    data2.push(SI[dataIndex]);
 
     const labels = Array.from({ length: data.length }, (_, i) => (i + 1).toString());
     myChart.data.labels = labels.map((_, i) => (i + 1 + dataIndex - data.length).toString());
@@ -180,10 +205,6 @@ function clearChartData() {
     myChart.update();
 }
 
-
-
-
-
 function playVideo() {
     video.play();
 }
@@ -196,89 +217,8 @@ function restartVideo() {
 video.currentTime = 0; // Set current time to 0 (start of the video)
 }
 
-
-
-// -----------------------------------------------
-// ------------- Type writer ---------------------
-// -----------------------------------------------
-let text = "Prompt: I feel very confident around robots !";
-const delay = 80; 
-
-const textElement = document.getElementById('typewriter-text');
-
-let index = 0;
-let baseFontSize = 24; // Initial font size for example
-
-function type() {
-    if (index < text.length) {
-        textElement.textContent += text.charAt(index);
-        index++;
-
-        // Check if the text exceeds the width of the container
-        if (textElement.offsetWidth < textElement.scrollWidth) {
-            // Reduce font size if the text overflows
-            baseFontSize -= 1;
-            textElement.style.fontSize = baseFontSize + "px";
-        }
-        setTimeout(type, delay);
-    }
-}
-
-function waiting_typing(){
-    textElement.innerHTML = '_';
-    waiting_interval = setInterval(() => {
-    // Add or remove the cursor effect
-    if (textElement.innerHTML.endsWith('|')) {
-        textElement.innerHTML = textElement.innerHTML.slice(0, -1);
-    } else {
-        textElement.innerHTML += '|';
-    }
-}, 500);
-}
-
-// Start the typewriter effect when the page loads
-function start_typing() {
-clearInterval(waiting_interval);
-textElement.innerHTML = ''; // Clear existing text
-type();
-global_interval = setInterval(() => {
-    // Add or remove the cursor effect
-    if(index >= text.length){
-        if (textElement.innerHTML.endsWith('|')) {
-            textElement.innerHTML = textElement.innerHTML.slice(0, -1);
-        } else {
-            textElement.innerHTML += '|';
-        }
-    }
-}, 500); 
-
-};
-
-function remove_writing() {
-    clearInterval(global_interval);
-    clearInterval(waiting_interval);
-    index = 0;
-    const removeInterval = setInterval(() => {
-        if (textElement.innerHTML.length > 0) {
-            textElement.innerHTML = textElement.innerHTML.slice(0, -1);
-        } else {
-            clearInterval(removeInterval); 
-            index = 0;
-            waiting_typing();
-
-            if (baseFontSize !== 24) {
-                baseFontSize = 24;
-                textElement.style.fontSize = baseFontSize + "px";
-            }
-        }
-    }, delay);
-}
-
-
-
-
 window.onload = function() {
-    waiting_typing();
-    fetch_data("https://axtiop.github.io/GPTGuardian_display/data_safety/Exp1/F1/data.csv");
-};  
+    fetch_data("https://axtiop.github.io/GPTGuardian_display/data_decision/L1N1/L2N1/L3N1/L4N1/L5N1/data.csv");
+}; 
+
 

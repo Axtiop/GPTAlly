@@ -40,7 +40,7 @@ const changeVideoBtn2 = document.getElementById('FilePathBtn2');
 let videoCounterBtn1 = 1; let videoCounterBtn2 = 1
 let newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
 const namesBtn1 = ['Experiment 1', 'Experiment 2', 'Experiment 3']; 
-const namesBtn2 = ['GPT factor: 0.5', 'GPT factor: 1.0', 'GPT factor: 1.5']; 
+const namesBtn2 = ['Prompt 1', 'Prompt 2', 'Prompt 3']; 
 const text_list = ["Prompt: I feel very confident around robots", "Prompt: I feel neutral around robots", "Prompt: I feel very scared around robots"];
 let csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
 
