@@ -5,19 +5,18 @@ let interval = null;
 let isPaused = false;
 
 const ctx = document.getElementById('myChart').getContext('2d');
-
 const myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: [],
         datasets: [{
-            label: 'Speed',
+            label: 'Speed [m/s]',
             data: data,
             fill: false,
             borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 1
         },{
-            label: 'SI',
+            label: 'SI [-]',
             data: data2,
             fill: false,
             borderColor: 'rgba(54, 162, 235, 1)',
@@ -26,12 +25,41 @@ const myChart = new Chart(ctx, {
     },
     options: {
         scales: {
+            x: {
+                display: true,
+                title: {
+                  display: true,
+                  text: 'Time [100 ms]',
+                  color: 'rgba(0, 0, 0, 0.5)',
+                  font: {
+                    family: 'Times',
+                    size: 20,
+                    style: 'normal',
+                    lineHeight: 1.2
+                  },
+                  padding: {top: 20, left: 0, right: 0, bottom: 0}
+                }
+            },
             y: {
-                beginAtZero: true
+                min: 0, // Set minimum value for y-axis scale
+                max: 1, // Set maximum value for y-axis scale
+                display: true,
+                title: {
+                  display: true,
+                  text: 'Value',
+                  color: 'rgba(0, 0, 0, 0.5)',
+                  font: {
+                    family: 'Times',
+                    size: 20,
+                    style: 'normal',
+                    lineHeight: 1.2
+                  },
+                  padding: {top: 30, left: 0, right: 0, bottom: 0}
+                }
+            }
             }
         }
-    }
-});
+    });
 
 let video = document.getElementById('myVideo');
 const changeVideoBtn1 = document.getElementById('FilePathBtn1');
@@ -258,6 +286,7 @@ global_interval = setInterval(() => {
 
 function remove_writing() {
     clearInterval(waiting_interval);
+    clearInterval(global_interval);
     if(has_typed > 0){
         clearInterval(global_interval);
     }
@@ -277,11 +306,8 @@ function remove_writing() {
                 textElement.style.fontSize = baseFontSize + "px";
             }
         }
-    }, delay);
+    }, 20);
 }
-
-
-
 
 window.onload = function() {
     waiting_typing();
