@@ -38,7 +38,7 @@ const changeVideoBtn1 = document.getElementById('FilePathBtn1');
 const changeVideoBtn2 = document.getElementById('FilePathBtn2');
 
 let videoCounterBtn1 = 1; let videoCounterBtn2 = 1
-let newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.MP4`;
+let newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
 const namesBtn1 = ['Experiment 1', 'Experiment 2', 'Experiment 3']; 
 const namesBtn2 = ['GPT factor: 0.5', 'GPT factor: 1.0', 'GPT factor: 1.5']; 
 const text_list = ["Prompt: I feel very confident around robots", "Prompt: I feel neutral around robots", "Prompt: I feel very scared around robots"];
@@ -56,7 +56,7 @@ function changeVideoSource(newSource) {
 changeVideoBtn1.addEventListener('click', function() {
     videoCounterBtn1 = (videoCounterBtn1 % namesBtn1.length ) + 1;
     changeVideoBtn1.textContent = namesBtn1[videoCounterBtn1 - 1]
-    newSource = `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.MP4`;
+    newSource = `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
     changeVideoSource(newSource);
     csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
     fetch_data(csvSource);
@@ -67,7 +67,7 @@ changeVideoBtn2.addEventListener('click', function() {
     videoCounterBtn2 = (videoCounterBtn2 % namesBtn2.length ) + 1;
     changeVideoBtn2.textContent = namesBtn2[videoCounterBtn2 - 1]
     text = text_list[videoCounterBtn2 - 1]
-    newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.MP4`;
+    newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
     changeVideoSource(newSource);
     csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
     fetch_data(csvSource);
