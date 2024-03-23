@@ -57,4 +57,7 @@
             /*max-width: 60%; /* Ensure they don't exceed container width */
            /* max-height: 90%; /* Ensure they don't exceed container height */
         }
+        .img-fluid{
+            width: 100%;
+        }
     }  
