@@ -25,13 +25,13 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="d-flex justify-content-center mt-3 mb-3">
-                    <button id="displayDataBtn" class="btn btn-success" style="width: 60%;">Play</button>
+                    <button id="displayDataBtn" class="btn btn-success" style="width: 40%;">Play</button>
                 </div>
                 <canvas id="myChart" width="400" height="200"></canvas>
             </div>
             <div class="col-md-6">
                 <div class="d-flex flex-column justify-content-center align-items-center mt-3"> <!-- Changed to flex-column -->
-                    <button id="stopDataBtn" class="btn btn-warning mb-3" style="width: 60%;">Pause</button> <!-- Moved button inside the flex container -->
+                    <button id="stopDataBtn" class="btn btn-warning mb-3" style="width: 40%;">Pause</button> <!-- Moved button inside the flex container -->
                     <!-- <video id="myVideo" src="data_decision\L1N1\L2N1\L3N1\L4N1\L5N1\Video.mp4" class="video" playsinline>
                         <source type="video/mp4">
                         Your browser does not support the video tag.
@@ -64,25 +64,23 @@
     </div>
 
     <div class="container mt-2 mb-2 border rounded p-4 container-box-other">
-        <h1>Questionnaire</h1>
         <form action="https://api.staticforms.xyz/submit" method="post" id="staticform">
         <!-- Replace with your StaticForms accessKey -->
             <input type="hidden" name="accessKey" value="7b5417e3-e09b-4159-82fe-cf1688860bdb">
             <input type="hidden" name="subject" value="Test from jsfiddle">
           <!-- First question -->
-          <div class="form-group row">
-            <label for="question1" class="col-sm-2 col-form-label">User ID:</label>
-            <div class="col-sm-10">
+          <div class="form-group row justify-content-center mb-5">
+            <div class="col-md-4">
+              <span class="input-group-text" id="basic-addon1">User ID </span>
               <input type="number" class="form-control" id="question0" name="$question0" placeholder="Enter your answer">
             </div>
           </div>
       
           <!-- Radio button questions -->
           <div class="form-group">
-            <h2>Radio Questions</h2>
             <div class="row">
               <!-- Question 2 -->
-              <div class="col-md-2">
+              <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
                 <fieldset class="form-group">
                   <legend class="col-form-label">Experiment 1:</legend>
                   <div class="form-check">
@@ -110,7 +108,7 @@
               <!-- Repeat this block for each additional radio question -->
               <!-- Remember to change the question number -->
               <!-- Question 3 -->
-              <div class="col-md-2">
+              <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
                 <fieldset class="form-group">
                   <legend class="col-form-label">Experiment 2:</legend>
                   <div class="form-check">
@@ -133,7 +131,7 @@
                   </div>
                 </fieldset>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
                 <fieldset class="form-group">
                   <legend class="col-form-label">Experiment 3:</legend>
                   <div class="form-check">
@@ -156,7 +154,7 @@
                   </div>
                 </fieldset>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
                 <fieldset class="form-group">
                   <legend class="col-form-label">Experiment 4:</legend>
                   <div class="form-check">
@@ -179,7 +177,7 @@
                   </div>
                 </fieldset>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
                 <fieldset class="form-group">
                   <legend class="col-form-label">Experiment 5:</legend>
                   <div class="form-check">
@@ -202,7 +200,7 @@
                   </div>
                 </fieldset>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
                 <fieldset class="form-group">
                   <legend class="col-form-label">Experiment 6:</legend>
                   <div class="form-check">
@@ -233,7 +231,7 @@
             </div>
           <div class="row">
             <!-- Question 2 -->
-            <div class="col-md-2">
+            <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
               <fieldset class="form-group">
                 <legend class="col-form-label">Experiment 7:</legend>
                 <div class="form-check">
@@ -261,7 +259,7 @@
             <!-- Repeat this block for each additional radio question -->
             <!-- Remember to change the question number -->
             <!-- Question 3 -->
-            <div class="col-md-2">
+            <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
               <fieldset class="form-group">
                 <legend class="col-form-label">Experiment 8:</legend>
                 <div class="form-check">
@@ -284,7 +282,7 @@
                 </div>
               </fieldset>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
               <fieldset class="form-group">
                 <legend class="col-form-label">Experiment 9:</legend>
                 <div class="form-check">
@@ -307,7 +305,7 @@
                 </div>
               </fieldset>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
               <fieldset class="form-group">
                 <legend class="col-form-label">Experiment 10:</legend>
                 <div class="form-check">
@@ -330,7 +328,7 @@
                 </div>
               </fieldset>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
               <fieldset class="form-group">
                 <legend class="col-form-label">Experiment 11:</legend>
                 <div class="form-check">
@@ -353,7 +351,7 @@
                 </div>
               </fieldset>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mt-2 d-flex justify-content-center form-style">
               <fieldset class="form-group">
                 <legend class="col-form-label">Experiment 12:</legend>
                 <div class="form-check">
@@ -387,7 +385,8 @@
           <!-- Remember to change the question numbers -->
       
           <!-- Submit button -->
-          <div class="row mt-4">
+          <input type="hidden" name="redirectTo" value="https://axtiop.github.io/GPTGuardian_display/">
+          <div class="row mt-4 justify-content-center">
               <button type="submit" class="btn btn-success fixed-width-btn">Submit</button>
           </div>
         </form>
