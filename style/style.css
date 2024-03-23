@@ -6,8 +6,8 @@
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 .video {
-    width: 60%; /* Make both elements fill their container */
-    height: auto; /* Maintain aspect ratio */
+    height: 300px; /* Maintain aspect ratio */
+    width: auto; /* Make both elements fill their container */
     /*max-width: 60%; /* Ensure they don't exceed container width */
    /* max-height: 90%; /* Ensure they don't exceed container height */
 }
@@ -50,5 +50,11 @@
         .fixed-width-btn {
             width: 100%; /* Make buttons full width on smaller devices */
             margin-bottom: 5px; /* Add some space between buttons */
+        }
+        .video {
+            height: 200px; /* Maintain aspect ratio */
+            width: auto; /* Make both elements fill their container */
+            /*max-width: 60%; /* Ensure they don't exceed container width */
+           /* max-height: 90%; /* Ensure they don't exceed container height */
         }
     }  
