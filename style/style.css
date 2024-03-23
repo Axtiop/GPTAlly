@@ -13,16 +13,23 @@
 }
 .fixed-width-btn {
     width: 150px; /* Adjust the width as needed */
+    font-size: 20px;
 }
 .btn-primary {
     background-color: #2980b9;
 }
 .btn-success {
     background-color: #27ae60;
+    font-size:20px;
 }
 
+.btn-danger{
+    font-size:20px;
+}
 .btn-warning{
-    background-color: #f39c12;
+    background-color: #f1c40f;
+    color: white;
+    font-size:20px;
 }
 .container-box{
     background-color: #ecf0f1;
