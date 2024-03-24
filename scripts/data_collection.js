@@ -97,9 +97,12 @@ changeVideoBtn1.addEventListener('click', function() {
     experiment_id.textContent = `Experiment: ${(videoCounterBtn1-1)*24 + (videoCounterBtn2-1)*12 + (videoCounterBtn3-1)*4 + videoCounterBtn4}`;
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
     img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
-    //changeVideoSource(newSource);
-    //csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
-    //fetch_data(csvSource);
+    changeVideoSource(newSource);
+    csvSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+    clearChartData();
+    clearInterval(interval);
+    restartVideo();
+    fetch_data(csvSource);
 });
 
 changeVideoBtn2.addEventListener('click', function() {
@@ -120,9 +123,12 @@ changeVideoBtn2.addEventListener('click', function() {
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
     img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
     
-    //changeVideoSource(newSource);
-    //csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
-    //fetch_data(csvSource);
+    changeVideoSource(newSource);
+    csvSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+    clearChartData();
+    clearInterval(interval);
+    restartVideo();
+    fetch_data(csvSource);
 });
 
 
@@ -145,7 +151,6 @@ document.getElementById('displayDataBtn').addEventListener('click', function () 
         stopBtn.textContent = "Pause";
         startBtn.textContent = "Resume";
     }
-    start_typing();
     updateChart();
     playVideo();
     interval = setInterval(updateChart, 100);
@@ -175,7 +180,6 @@ document.getElementById('stopDataBtn').addEventListener('click', function () {
         stopBtn.textContent = "Pause";
         startBtn.textContent = "Display Data";
         // there the data should also be stopped
-        remove_writing();
         clearChartData();
         clearInterval(interval);
         restartVideo();
@@ -188,6 +192,7 @@ var SI = [];
 function fetch_data(name_csv){
     speeds = []
     SI = []
+    dataIndex = 0;
     fetch(name_csv)
     .then(response => response.text())
     .then(data => {
@@ -206,21 +211,20 @@ function fetch_data(name_csv){
 function updateChart() {
 if (dataIndex >= SI.length) {
     clearChartData();
-    playVideo();
+    restartVideo();
 }
 if (dataIndex >= 100) {
     data.shift();
     data2.shift();
 }
     data.push(SI[dataIndex]);
-    data2.push(SI[dataIndex]);
+    data2.push(speeds[dataIndex]);
 
     const labels = Array.from({ length: data.length }, (_, i) => (i + 1).toString());
     myChart.data.labels = labels.map((_, i) => (i + 1 + dataIndex - data.length).toString());
     myChart.data.datasets[0].data = data;
     myChart.data.datasets[1].data = data2;
     myChart.update();
-
     dataIndex++;
 }
 function clearChartData() {
