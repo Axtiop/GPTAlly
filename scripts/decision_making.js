@@ -61,7 +61,7 @@ const myChart = new Chart(ctx, {
         }
     });
 
-let video = document.getElementById('myVideo');
+const video = document.getElementById('myVideo');
 const changeVideoBtn1 = document.getElementById('FilePathBtn1');
 const changeVideoBtn2 = document.getElementById('FilePathBtn2');
 const changeVideoBtn3 = document.getElementById('FilePathBtn3');
@@ -76,9 +76,10 @@ const namesBtn2 = ['SI', 'Path-Planning'];
 const namesBtn3 = ['Short dist', 'Moderate dist', 'Long dist']; 
 const namesBtn4 = ['Layout 1', 'Layout 2', 'Layout 3', 'Layout 4'];
 const namesBtn5 = ['Prompt 1'];
-let csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+let csvSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
 
 function changeVideoSource(newSource) {
+    stopVideo();
     video.src = newSource;
     video.load();
 }
@@ -88,9 +89,12 @@ changeVideoBtn1.addEventListener('click', function() {
     changeVideoBtn1.textContent = namesBtn1[videoCounterBtn1 - 1]
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
     img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
-    //changeVideoSource(newSource);
-    //csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
-    //fetch_data(csvSource);
+    changeVideoSource(newSource);
+    csvSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+    clearChartData();
+    clearInterval(interval);
+    restartVideo();
+    fetch_data(csvSource);
 });
 
 changeVideoBtn2.addEventListener('click', function() {
@@ -98,36 +102,48 @@ changeVideoBtn2.addEventListener('click', function() {
     changeVideoBtn2.textContent = namesBtn2[videoCounterBtn2 - 1]
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
     img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
-    //changeVideoSource(newSource);
-    //csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
-    //fetch_data(csvSource);
+    changeVideoSource(newSource);
+    csvSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+    clearChartData();
+    clearInterval(interval);
+    restartVideo();
+    fetch_data(csvSource);
 });
 changeVideoBtn3.addEventListener('click', function() {
     videoCounterBtn3 = (videoCounterBtn3 % namesBtn3.length ) + 1;
     changeVideoBtn3.textContent = namesBtn3[videoCounterBtn3 - 1]
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
     img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
-    //changeVideoSource(newSource);
-    //csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
-    //fetch_data(csvSource);
+    changeVideoSource(newSource);
+    csvSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+    clearChartData();
+    clearInterval(interval);
+    restartVideo();
+    fetch_data(csvSource);
 });
 changeVideoBtn4.addEventListener('click', function() {
     videoCounterBtn4 = (videoCounterBtn4 % namesBtn4.length ) + 1;
     changeVideoBtn4.textContent = namesBtn4[videoCounterBtn4 - 1]
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
     img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
-    //changeVideoSource(newSource);
-    //csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
-    //fetch_data(csvSource);
+    changeVideoSource(newSource);
+    csvSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+    clearChartData();
+    clearInterval(interval);
+    restartVideo();
+    fetch_data(csvSource);
 });
 changeVideoBtn5.addEventListener('click', function() {
     videoCounterBtn5 = (videoCounterBtn5 % namesBtn5.length ) + 1;
     changeVideoBtn5.textContent = namesBtn5[videoCounterBtn5 - 1]
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
     img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
-    //changeVideoSource(newSource);
-    //csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
-    //fetch_data(csvSource);
+    changeVideoSource(newSource);
+    csvSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+    clearChartData();
+    clearInterval(interval);
+    restartVideo();
+    fetch_data(csvSource);
 });
 
 
@@ -188,32 +204,13 @@ document.getElementById('stopDataBtn').addEventListener('click', function () {
 
 });
 
-/*  
-function updateChart() {
-    if (dataIndex >= 100) {
-        data.shift();
-        data2.shift();
-    }
 
-    data.push(Math.floor(Math.random() * 100));
-    data2.push(Math.floor(Math.random() * 100));
-
-    const labels = Array.from({ length: data.length }, (_, i) => (i + 1).toString());
-    myChart.data.labels = labels.map((_, i) => (i + 1 + dataIndex - data.length).toString());
-    myChart.data.datasets[0].data = data;
-    myChart.data.datasets[1].data = data2;
-    
-    myChart.update();
-
-    dataIndex++;
-}
-http://127.0.0.1:5500/data/L1N1/L2N1/L3N1/L4N1/L5N1/data.csv
-*/
 var speeds = [];
 var SI = [];
 function fetch_data(name_csv){
     speeds = []
     SI = []
+    dataIndex = 0;
     fetch(name_csv)
     .then(response => response.text())
     .then(data => {
@@ -232,21 +229,20 @@ function fetch_data(name_csv){
 function updateChart() {
 if (dataIndex >= SI.length) {
     clearChartData();
-    playVideo();
+    restartVideo();
 }
 if (dataIndex >= 100) {
     data.shift();
     data2.shift();
 }
     data.push(SI[dataIndex]);
-    data2.push(SI[dataIndex]);
+    data2.push(speeds[dataIndex]);
 
     const labels = Array.from({ length: data.length }, (_, i) => (i + 1).toString());
     myChart.data.labels = labels.map((_, i) => (i + 1 + dataIndex - data.length).toString());
     myChart.data.datasets[0].data = data;
     myChart.data.datasets[1].data = data2;
     myChart.update();
-
     dataIndex++;
 }
 function clearChartData() {
@@ -346,5 +342,5 @@ function remove_writing() {
 
 window.onload = function() {
     waiting_typing();
-    fetch_data("https://axtiop.github.io/GPTGuardian_display/data_decision/L1N1/L2N1/L3N1/L4N1/L5N1/data.csv");
+    fetch_data("data_decision/L1N1/L2N1/L3N1/L4N1/L5N1/data.csv");
 }; 

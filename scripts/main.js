@@ -87,6 +87,9 @@ changeVideoBtn1.addEventListener('click', function() {
     newSource = `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
     changeVideoSource(newSource);
     csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
+    clearChartData();
+    clearInterval(interval);
+    restartVideo();
     fetch_data(csvSource);
 });
 
@@ -98,6 +101,9 @@ changeVideoBtn2.addEventListener('click', function() {
     newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
     changeVideoSource(newSource);
     csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
+    clearChartData();
+    clearInterval(interval);
+    restartVideo();
     fetch_data(csvSource);
 });
 
