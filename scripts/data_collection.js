@@ -84,17 +84,18 @@ changeVideoBtn1.addEventListener('click', function() {
     if (videoCounterBtn4 === 4) {
         videoCounterBtn3 = (videoCounterBtn3 - 1) || 3;
     
-        // Decrement counter 2 if counter 3 rolled over to 0
+        //Decrement counter 2 if counter 3 rolled over to 0
         if (videoCounterBtn3 === 3) {
-            videoCounterBtn2 = (videoCounterBtn2 - 1) || 2;
-    
-            // Decrement counter 1 if counter 2 rolled over to 0
-            if (videoCounterBtn2 === 2) {
-                videoCounterBtn1 = (videoCounterBtn1 - 1) || 2;
-            }
+        //videoCounterBtn2 = (videoCounterBtn2 - 1) || 2;
+
+        // Decrement counter 1 if counter 2 rolled over to 0
+        //if (videoCounterBtn2 === 2) {
+            videoCounterBtn1 = (videoCounterBtn1 - 1) || 2;
+        //}
         }
     }
-    experiment_id.textContent = `Experiment: ${(videoCounterBtn1-1)*24 + (videoCounterBtn2-1)*12 + (videoCounterBtn3-1)*4 + videoCounterBtn4}`;
+    //experiment_id.textContent = `Experiment: ${(videoCounterBtn1-1)*24 + (videoCounterBtn2-1)*12 + (videoCounterBtn3-1)*4 + videoCounterBtn4}`;
+    experiment_id.textContent = `Experiment: ${(videoCounterBtn1-1)*12 + (videoCounterBtn3-1)*4 + videoCounterBtn4}`;
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
     img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
     changeVideoSource(newSource);
@@ -112,14 +113,15 @@ changeVideoBtn2.addEventListener('click', function() {
         prevideoCounterBtn3 = (videoCounterBtn3 % 3 )
         videoCounterBtn3 = prevideoCounterBtn3 + 1;
         if(prevideoCounterBtn3 === 0){
-            prevideoCounterBtn2 = (videoCounterBtn2 % 2 )
-            videoCounterBtn2 = prevideoCounterBtn2 + 1;
-            if(prevideoCounterBtn2 === 0){
+            //prevideoCounterBtn2 = (videoCounterBtn2 % 2 )
+            //videoCounterBtn2 = prevideoCounterBtn2 + 1;
+            //if(prevideoCounterBtn2 === 0){
                 videoCounterBtn1 = (videoCounterBtn1 % 2 ) + 1;
-            }
+            //}
         }
     }
-    experiment_id.textContent = `Experiment: ${(videoCounterBtn1-1)*24 + (videoCounterBtn2-1)*12 + (videoCounterBtn3-1)*4 + videoCounterBtn4}`;
+    //experiment_id.textContent = `Experiment: ${(videoCounterBtn1-1)*24 + (videoCounterBtn2-1)*12 + (videoCounterBtn3-1)*4 + videoCounterBtn4}`;
+    experiment_id.textContent = `Experiment: ${(videoCounterBtn1-1)*12 + (videoCounterBtn3-1)*4 + videoCounterBtn4}`;
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
     img.src = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
     

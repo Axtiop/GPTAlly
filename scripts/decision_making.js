@@ -72,7 +72,8 @@ let videoCounterBtn1 = 1; let videoCounterBtn2 = 1; let videoCounterBtn3 = 1; le
 let newSource =  `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
 let newImg = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
 const namesBtn1 = ['Picking', 'Placing']; 
-const namesBtn2 = ['SI', 'Path-Planning']; 
+//const namesBtn2 = ['SI', 'Path-Planning']; 
+const namesBtn2 = ['SI'];
 const namesBtn3 = ['Short dist', 'Moderate dist', 'Long dist']; 
 const namesBtn4 = ['Layout 1', 'Layout 2', 'Layout 3', 'Layout 4'];
 const namesBtn5 = ['Prompt 1'];
