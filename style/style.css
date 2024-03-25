@@ -56,9 +56,10 @@
     width: 60%;
 }
 
-    @media (max-width: 1700px) {
+    @media (max-width: 2100px) {
         .video {
             width: 80%; /* Make both elements fill their container */
+            height: auto;
             /*max-width: 60%; /* Ensure they don't exceed container width */
            /* max-height: 90%; /* Ensure they don't exceed container height */
         }
