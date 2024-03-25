@@ -292,27 +292,33 @@ global_interval = setInterval(() => {
 
 function remove_writing() {
     clearInterval(waiting_interval);
-    clearInterval(global_interval);
-    if(has_typed > 0){
+    try {
         clearInterval(global_interval);
-    }
-    has_typed = 0;
-    
-    index = 0;
-    const removeInterval = setInterval(() => {
-        if (textElement.innerHTML.length > 0) {
-            textElement.innerHTML = textElement.innerHTML.slice(0, -1);
-        } else {
-            clearInterval(removeInterval); 
-            index = 0;
-            waiting_typing();
-
-            if (baseFontSize !== 24) {
-                baseFontSize = 24;
-                textElement.style.fontSize = baseFontSize + "px";
-            }
+     } catch(ex) {
+        //handle the error, where ex or what ever you choose to call it is your exception reference
+     } finally {
+        if(has_typed > 0){
+            clearInterval(global_interval);
         }
-    }, 20);
+        has_typed = 0;
+        
+        index = 0;
+        const removeInterval = setInterval(() => {
+            if (textElement.innerHTML.length > 0) {
+                textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+            } else {
+                clearInterval(removeInterval); 
+                index = 0;
+                waiting_typing();
+    
+                if (baseFontSize !== 24) {
+                    baseFontSize = 24;
+                    textElement.style.fontSize = baseFontSize + "px";
+                }
+            }
+        }, 20);
+     }
+    
 }
 
 window.onload = function() {
