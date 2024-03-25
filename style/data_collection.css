@@ -71,19 +71,26 @@
     font-size:20px;
 
 }
-
-    @media (max-width: 576px) { /* Adjust for smaller devices */
-        .fixed-width-btn {
-            width: 100%; /* Make buttons full width on smaller devices */
-            margin-bottom: 5px; /* Add some space between buttons */
-        }
-        .video {
-            height: 200px; /* Maintain aspect ratio */
-            width: auto; /* Make both elements fill their container */
-            /*max-width: 60%; /* Ensure they don't exceed container width */
-           /* max-height: 90%; /* Ensure they don't exceed container height */
-        }
-        .img-fluid{
-            width: 100%;
-        }
-    }  
+@media (max-width: 2300px) {
+    .video {
+        width: 80%; /* Make both elements fill their container */
+        height: auto;
+        /*max-width: 60%; /* Ensure they don't exceed container width */
+       /* max-height: 90%; /* Ensure they don't exceed container height */
+    }
+}
+@media (max-width: 576px) { /* Adjust for smaller devices */
+    .fixed-width-btn {
+        width: 100%; /* Make buttons full width on smaller devices */
+        margin-bottom: 5px; /* Add some space between buttons */
+    }
+    .video {
+        height: 200px; /* Maintain aspect ratio */
+        width: auto; /* Make both elements fill their container */
+        /*max-width: 60%; /* Ensure they don't exceed container width */
+        /* max-height: 90%; /* Ensure they don't exceed container height */
+    }
+    .img-fluid{
+        width: 100%;
+    }
+}  
