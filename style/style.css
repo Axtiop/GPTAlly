@@ -56,6 +56,11 @@
     width: 60%;
 }
 
+.text-justify {
+    text-align: justify;
+    text-justify: distribute;
+}
+
     @media (max-width: 2300px) {
         .video {
             width: 80%; /* Make both elements fill their container */

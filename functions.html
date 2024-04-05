@@ -24,7 +24,10 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Safety</a>
+                <a class="nav-link" href="index.html">Main</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="safety_evaluation.html">Safety</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="decision_making.html">Decision Making</a>
@@ -33,7 +36,7 @@
                 <a class="nav-link active" href="functions.html">Functions</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="welcome_page.html">Survey</a>
+                <a class="nav-link" href="survey.html">Survey</a>
             </li>
             </ul>
         </div>
@@ -43,10 +46,69 @@
     <div class="container container-box border rounded p-4 mt-4 ">
         <div class="row justify-content-center">
             <div class="col-auto">
-                    <button id="FilePathBtn1" class="btn btn-primary">?</button>
+                    <h2>Withdrawal methods</h2>
             </div>
+        </div>
+    </div>
+
+    <div class="container mt-2 mb-2 border rounded p-4 container-box">
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <video id="myVideo" src="data_functions\Experiment.mp4" class="video" controls>
+                    <source type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
             <div class="col-auto">
-                <button id="FilePathBtn2" class="btn btn-primary fixed-width-btn">!</button>
+                <h3>About this experiment</h3>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-auto">
+                <p class="text-justify">In this experiment, we delve into the intricacies of human-robot collaboration within a task-oriented framework. The task involves manipulating blocks placed on a table to stack them together. Central to this experiment is ensuring the safety of the human participant throughout their interaction with the robot. The initial trajectory of the robot is visually represented in blue, providing a clear depiction of its planned movements. There is no withdrawal implemented during this phase, allowing the robot to follow its programmed instructions uninterrupted. This initial phase serves as a representation against which subsequent trials, featuring withdrawal strategies, are compared. Withdrawal becomes imperative when the robot's trajectory brings it uncomfortably close to the human user. These instances are carefully monitored, and the human participant communicates their perceived safe zone to the robot. This safe zone delineates an area within which the user feels comfortable with the robot's proximity, thereby ensuring a sense of safety and mitigating the risk of collision or injury. The withdrawal methods are meticulously designed to address safety concerns while also exploring the potential of integrating LLMs to suggest 3D poses that lead to a change in trajectory. This integration of GPT-4 offers a novel approach to dynamically altering the robot's movements based on user input and perceived safety zones. By leveraging GPT-4 and evaluating various withdrawal methods, we aim to gain insights into optimal strategies for fostering safe human-robot collaboration. This experiment not only contributes to the development of robotic systems prioritizing user safety but also explores innovative avenues for leveraging AI technologies like GPT in interactive scenarios. It should be noted that the decision of withdrawing is made also by a LLMs as explained in the decision making process XX Add link XX.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-box border rounded p-4 mt-4 ">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Prompts
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a id="prompt1" class="dropdown-item" href="#">Move to the right</a></li>
+                      <li><a id="prompt2" class="dropdown-item" href="#">Move to the left</a></li>
+                      <li><a id="prompt3" class="dropdown-item" href="#">Move closer to me</a></li>
+                      <li><a id="prompt4" class="dropdown-item" href="#">Move away from me</a></li>
+                      <li><a id="prompt5" class="dropdown-item" href="#">Move up</a></li>
+                      <li><a id="prompt6" class="dropdown-item" href="#">Move down</a></li>
+                      <li><a id="prompt7" class="dropdown-item" href="#">Move closer to the stack</a></li>
+                      <li><a id="prompt8" class="dropdown-item" href="#">Move away from the stack</a></li>
+                      <li><a id="prompt9" class="dropdown-item" href="#">Move toward the right side of the stack</a></li>
+                      <li><a id="prompt10" class="dropdown-item" href="#">Move toward the left side of the stack</a></li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-2 border rounded p-4"> 
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center"> 
+                <video id="dataVideo" src="data_functions/P1/P1/Video.mp4" class="video" controls loop>
+                    <source type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6 text-center"> 
+                <button id="changeData" class="btn btn-primary mb-3" style="width: 40%;">other example</button>
             </div>
         </div>
     </div>
@@ -54,56 +116,13 @@
     <div class="container mt-2 border rounded p-4 container-box"> 
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="d-flex justify-content-center mt-3 mb-3">
-                    <button id="displayDataBtn" class="btn btn-success" style="width: 40%;">Play</button>
-                </div>
-                <canvas id="myChart" width="400" height="200"></canvas>
-            </div>
-            <div class="col-md-6">
                 <div class="d-flex flex-column justify-content-center align-items-center mt-3"> 
-                    <button id="stopDataBtn" class="btn btn-warning mb-3" style="width: 40%;">Pause</button>
-                    <!-- <video id="myVideo" src="data_safety\Exp1\F1\Video.mp4" class="video" playsinline>
-                        <source type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                -->
-                    <h3> Coming Sooner or later :p </h3>
+                    <h3> To be determined </h3>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container mt-2 border rounded p-4 container-box">
-        <div class="row">
-            <div class="typewriter">
-                <h3 id="typewriter-text"></h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mt-2 mb-2 border rounded p-4 container-box">
-        <div class="row mb-5 justify-content-center">
-            <div class="col-auto">
-                <h3>About this experiment</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-auto">
-                <p>Coming ! </p>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-auto">
-                <p>Coming !</p>
-            </div>
-        </div>
-        <div class="row justify-content-around">
-            <div class="col text-center">
-                <img id="exp_image" src="" class="img-fluid global_image_safety" alt="Responsive image">
-            </div>
-        </div>
-    </div>
-    
 <!-- Bootstrap Bundle JS -->
 <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

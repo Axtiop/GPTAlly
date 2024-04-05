@@ -24,7 +24,10 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" href="index.html">Safety</a>
+                <a class="nav-link active" href="index.html">Main</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="safety_evaluation.html">Safety</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="decision_making.html">Decision Making</a>
@@ -43,61 +46,39 @@
     <div class="container container-box border rounded p-4 mt-4 ">
         <div class="row justify-content-center">
             <div class="col-auto">
-                    <button id="FilePathBtn1" class="btn btn-primary">Experiment 1</button>
-            </div>
-            <div class="col-auto">
-                <button id="FilePathBtn2" class="btn btn-primary fixed-width-btn">Prompt 1</button>
+                <h3>Video of the system</h3>
+                <h6>Coming soon</h6>
             </div>
         </div>
     </div>
 
-    <div class="container mt-2 border rounded p-4 container-box"> 
+    <div class="container container-box border rounded p-4 mt-4 ">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="d-flex justify-content-center mt-3 mb-3">
-                    <button id="displayDataBtn" class="btn btn-success" style="width: 40%;">Play</button>
-                </div>
-                <canvas id="myChart" width="400" height="200"></canvas>
+            <div class="col-auto">
+                <h3>Abstract</h3>
             </div>
-            <div class="col-md-6">
-                <div class="d-flex flex-column justify-content-center align-items-center mt-3"> 
-                    <button id="stopDataBtn" class="btn btn-warning mb-3" style="width: 40%;">Pause</button>
-                    <video id="myVideo" src="data_safety\Exp1\F1\Video.mp4" class="video" playsinline>
-                        <source type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <p class="text-justify">NB: This is an old abstract, it must be renewed. Society 5.0 marks a transformative era where the focus shifts from mere productivity to prioritizing the quality of life in the workplace. For such a transformation to take place, robots still need great improvements in the domain of understanding human intentions and decision-making processes through natural language. However, translating these instructions into robotic motion in the real world remains challenging. Traditionally, such translation is possible only for narrow tasks and can hardly be used for something it has not been trained for. Embracing the generalization of such collaboration, emerging technologies such as Mixed Reality (MR), Large Language Models (LLMs), and Visual Language Models (VLMs) have shown interesting properties. In this context, the thesis introduces a zero-shot LLMs/VLMs-based architecture model for a human-robot collaborative task oriented toward safety. The model inputs a board overview image, oral commands from the user and the human poses which it transforms into a new safety evaluation and decisions. Instead of fine-tuning the model on known trajectories, as conventionally performed with Deep Learning (DL) models, we only use pre-trained language models such as CLIP, BERT, or GPT-4. The thesis also investigates the perception of safety that foundation models can assess during a collaborative task by comparing it to reliable safety index metrics. Based on the assessment of the safety of the human during the experiment, the trajectory will also be updated to ensure a safe interaction.</p>
             </div>
         </div>
     </div>
 
-    <div class="container mt-2 border rounded p-4 container-box">
-        <div class="row">
-            <div class="typewriter">
-                <h3 id="typewriter-text"></h3>
-            </div>
-        </div>
-    </div>
 
     <div class="container mt-2 mb-2 border rounded p-4 container-box">
-        <div class="row mb-5 justify-content-center">
-            <div class="col-auto">
-                <h3>About this experiment</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-auto">
-                <p>The purpose of this experiment is to evaluate if LLMs can incorporate human perception of safety into safety evaluations. Given that GPT is trained on natural language, we assume it encapsulates a certain perception of safety. To ensure a safe collaboration between humans and robots, it is imperative to intervene whenever the robot poses a risk to the user. Common interventions include reducing speed and adjusting path planning. The following method combines a safety index proposed by Gustavo Garcia [ADD LINK] and a multiplicative factor computed by GPT. The following is determined based on a prompt given by the user prior to the experiment (an extension to this work will offer the opportunity to change this factor while the experiment is ongoing). It ranges from 0 to 2 with 0 removing entirely the safety of the robot and 2 making the robot unable to move while a user is in its workspace. </p>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-auto">
-                <p>The robot's objective is to collect cubes and stack them together with a human collaborator. Three experiments are presented below, each representing a different level of difficulty, with the experiment on the left considered the easiest and the one on the right the hardest. In each experiment, two extreme prompts are provided by the user: "I am very confident." and "I am very afraid of robots." These are compared to a neutral prompt that generates a GPT factor of 1.0, resulting in an almost identical Safety Index to that proposed by Gustavo Garcia. In the first experiment, the robot must stack cubes on the left side of the user, while the user stacks cubes on his right. This situation is considered easy since interaction between the robot and user is unlikely. The second experiment is more challenging as both the robot and user collect cubes from the same location (not necessarily on the same side). Finally, in the third experiment, the robot must place cubes into the user's hand. This is particularly challenging as the robot must approach the user closely while moving toward him. If the safety index is too high due to the prompt, the robot is unlikely to accomplish its task.</p>
-            </div>
-        </div>
         <div class="row justify-content-around">
             <div class="col text-center">
-                <img id="exp_image" src="data_safety/Image.png" class="img-fluid global_image_safety" alt="Responsive image">
+                <img id="exp_image" src="Figures/Main_Figure.png" class="img-fluid global_image" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-box border rounded p-4 mt-4 ">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <h3>Main Results</h3>
+                <h6>Coming not so soon :p</h6>
             </div>
         </div>
     </div>
