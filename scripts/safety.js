@@ -94,7 +94,6 @@ changeVideoBtn1.addEventListener('click', function() {
 });
 
 changeVideoBtn2.addEventListener('click', function() {
-    
     videoCounterBtn2 = (videoCounterBtn2 % namesBtn2.length ) + 1;
     changeVideoBtn2.textContent = namesBtn2[videoCounterBtn2 - 1]
     text = text_list[videoCounterBtn2 - 1]
