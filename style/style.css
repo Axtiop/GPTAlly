@@ -5,8 +5,23 @@
 .container-box:hover {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
+
+.container-box-main {
+    transition: box-shadow 0.3s ease;
+}
+
+.container-box-main:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
 .video {
     height: 300px; /* Maintain aspect ratio */
+    width: auto; /* Make both elements fill their container */
+    /*max-width: 60%; /* Ensure they don't exceed container width */
+   /* max-height: 90%; /* Ensure they don't exceed container height */
+}
+
+.video_global {
+    height: 600px; /* Maintain aspect ratio */
     width: auto; /* Make both elements fill their container */
     /*max-width: 60%; /* Ensure they don't exceed container width */
    /* max-height: 90%; /* Ensure they don't exceed container height */
@@ -36,6 +51,11 @@
 .container-box{
     background-color: #ecf0f1;
 }
+
+.container-box-main{
+    background-color: #ffffff;
+}
+
 .bg-light-nav-custom{
     background-color: #ecf0f1;
 }
@@ -50,6 +70,10 @@
 
 .img-fluid{
     width: 80%;
+}
+
+.img-fluid-res{
+    width: 40%;
 }
 
 .global_image_safety{
