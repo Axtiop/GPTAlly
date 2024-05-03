@@ -43,8 +43,68 @@
         </div>
     </nav>
 
+    <div class="container mt-2 mb-2 border rounded p-4 container-box-main">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-auto">
+                <h3>Safety Evaluation</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <p>The purpose of this experiment is to evaluate if LLMs can incorporate human perception of safety into safety evaluations. Given that GPT is trained on natural language, we assume it encapsulates a certain perception of safety. To ensure a safe collaboration between humans and robots, it is imperative to intervene whenever the robot poses a risk to the user. Common interventions include reducing speed and adjusting path planning. The following method combines a safety index proposed by Gustavo Garcia [ADD LINK] and a multiplicative factor computed by GPT. The following is determined based on a prompt given by the user prior to the experiment (an extension to this work will offer the opportunity to change this factor while the experiment is ongoing). It ranges from 0 to 2 with 0 removing entirely the safety of the robot and 2 making the robot unable to move while a user is in its workspace. </p>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-auto">
+                <p>The robot's objective is to collect cubes and stack them together with a human collaborator. Three experiments are presented below, each representing a different level of difficulty, with the experiment on the left considered the easiest and the one on the right the hardest. In each experiment, two extreme prompts are provided by the user: "I am very confident." and "I am very afraid of robots." These are compared to a neutral prompt that generates a GPT factor of 1.0, resulting in an almost identical Safety Index to that proposed by Gustavo Garcia. In the first experiment, the robot must stack cubes on the left side of the user, while the user stacks cubes on his right. This situation is considered easy since interaction between the robot and user is unlikely. The second experiment is more challenging as both the robot and user collect cubes from the same location (not necessarily on the same side). Finally, in the third experiment, the robot must place cubes into the user's hand. This is particularly challenging as the robot must approach the user closely while moving toward him. If the safety index is too high due to the prompt, the robot is unlikely to accomplish its task.</p>
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col text-center">
+                <img id="exp_image" src="Figures/Exp1_rep.png" class="img-fluid global_image_safety" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container container-box-main border rounded p-4 mt-4 mb-4">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <h3>Proposed Method</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-auto">
+                <p class="text-justify">Explain how it works here <a href="safety_evaluation.html" class="text-warning">here.</a></p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <img id="exp_image" src="Figures/GPT_factor.png" class="img-fluid-gpt" alt="Responsive image">
+            </div>
+        </div>
+        <div class="row mt-5 mb-2 text-center">
+            <div class="col text-center">
+                <p class="text-justify">Table with all the prompts tested</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <img id="exp_image" src="Figures/Table_prompts.png" class="img-fluid-gpt" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+
     <div class="container container-box border rounded p-4 mt-4 ">
         <div class="row justify-content-center">
+            <div class="col-auto">
+                <h2>Explore the data</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-2 border rounded p-4 container-box-main"> 
+        <div class="row justify-content-center mb-4">
             <div class="col-auto">
                     <button id="FilePathBtn1" class="btn btn-primary">Experiment 1</button>
             </div>
@@ -52,9 +112,6 @@
                 <button id="FilePathBtn2" class="btn btn-primary fixed-width-btn">Prompt 1</button>
             </div>
         </div>
-    </div>
-
-    <div class="container mt-2 border rounded p-4 container-box"> 
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="d-flex justify-content-center mt-3 mb-3">
@@ -74,7 +131,7 @@
         </div>
     </div>
 
-    <div class="container mt-2 border rounded p-4 container-box">
+    <div class="container mt-2 mb-4 border rounded p-4 container-box-main">
         <div class="row">
             <div class="typewriter">
                 <h3 id="typewriter-text"></h3>
@@ -82,37 +139,6 @@
         </div>
     </div>
 
-    <div class="container mt-2 mb-2 border rounded p-4 container-box">
-        <div class="row mb-5 justify-content-center">
-            <div class="col-auto">
-                <h3>About this experiment</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-auto">
-                <p>The purpose of this experiment is to evaluate if LLMs can incorporate human perception of safety into safety evaluations. Given that GPT is trained on natural language, we assume it encapsulates a certain perception of safety. To ensure a safe collaboration between humans and robots, it is imperative to intervene whenever the robot poses a risk to the user. Common interventions include reducing speed and adjusting path planning. The following method combines a safety index proposed by Gustavo Garcia [ADD LINK] and a multiplicative factor computed by GPT. The following is determined based on a prompt given by the user prior to the experiment (an extension to this work will offer the opportunity to change this factor while the experiment is ongoing). It ranges from 0 to 2 with 0 removing entirely the safety of the robot and 2 making the robot unable to move while a user is in its workspace. </p>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-auto">
-                <p>The robot's objective is to collect cubes and stack them together with a human collaborator. Three experiments are presented below, each representing a different level of difficulty, with the experiment on the left considered the easiest and the one on the right the hardest. In each experiment, two extreme prompts are provided by the user: "I am very confident." and "I am very afraid of robots." These are compared to a neutral prompt that generates a GPT factor of 1.0, resulting in an almost identical Safety Index to that proposed by Gustavo Garcia. In the first experiment, the robot must stack cubes on the left side of the user, while the user stacks cubes on his right. This situation is considered easy since interaction between the robot and user is unlikely. The second experiment is more challenging as both the robot and user collect cubes from the same location (not necessarily on the same side). Finally, in the third experiment, the robot must place cubes into the user's hand. This is particularly challenging as the robot must approach the user closely while moving toward him. If the safety index is too high due to the prompt, the robot is unlikely to accomplish its task.</p>
-            </div>
-        </div>
-        <div class="row justify-content-around">
-            <div class="col text-center">
-                <img id="exp_image" src="data_safety/Image.png" class="img-fluid global_image_safety" alt="Responsive image">
-            </div>
-        </div>
-    </div>
-
-    <div class="container container-box border rounded p-4 mt-4 ">
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <h3>Results</h3>
-                <h3>Coming </h3>
-            </div>
-        </div>
-    </div>
     
 <!-- Bootstrap Bundle JS -->
 <script

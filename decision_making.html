@@ -40,21 +40,66 @@
         </div>
     </nav>
 
+    <div class="container mt-2 mb-2 border rounded p-4 container-box-main">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-auto">
+                <h3>Decision Making</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <p>An additional objective of the system is to assess the viability of utilizing LLMs for decision-making in HRC by providing a streamlined coding paradigm. This approach leverages the emergent properties of LLMs by diminishing the reliance on explicit condition descriptions and by using natural language to describe them. The hypothesis is assessed using the decision-making module. When the Danger Score (DS) surpasses a threshold of 0.8, the robot stops. Then, GPT-4 makes an informed decision on the next action: whether to wait, withdraw, or change the objective. By providing additional input to the prompt, one can influence the decision-making process. </p>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-auto">
+                <p>To assess this influence and evaluate its accuracy, the robot is halted in 24 different situations. These situations manipulate the input parameters necessary for the decision-making process. Text constraints imposed on input variables within the prompt allow the evaluation of decision-making accuracy by ensuring that the output aligns with these constraints. Each unique combination of parameters is examined, resulting in a total of 24 experiments being conducted. The first parameter that varies is the acction that the robot is doing: picking or placing a cube. Then, the distances between the end-effector of the robot and the closest point on the human body are categorized into three states: short where dist < 0.2m, middle where 0.2m < dist < 0.4m, or long where dist > 0.4m. The various layouts shown in Figure 4.5 aim to influence the decision of GPT-4 by varying the position and number of other blocks available for pick-up on the table.</p>
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col text-center">
+                <img id="exp_image" src="data_decision/Image.png" class="img-fluid global_image_safety" alt="Responsive image">
+            </div>
+        </div>
+        <div class="row mb-2 mt-4">
+            <div class="col-auto">
+                <p>GPT-4 receives the current state informations and based on the following he decides which action is most suited for the situation. The decision given by GPT-4 is displayed as a prompt in the container above.</p>
+            </div>
+        </div>
+        <div class="row mb-2 mt-2">
+            <div class="col-auto">
+                <p>From left to right: wait, withdraw and change Objective</p>
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col text-center">
+                <img id="exp_image" src="Figures/decisions.png" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+    
     <div class="container container-box border rounded p-4 mt-4 ">
         <div class="row justify-content-center">
             <div class="col-auto">
-                <button id="FilePathBtn1" class="btn btn-primary fixed-width-btn">Picking</button>
-            </div>
-            <div class="col-auto">
-                <button id="FilePathBtn3" class="btn btn-primary fixed-width-btn">Short Dist</button>
-            </div>
-            <div class="col-auto">
-                <button id="FilePathBtn4" class="btn btn-primary fixed-width-btn">Layout 1</button>
+                <h2>Explore the data</h2>
             </div>
         </div>
     </div>
 
-    <div class="container mt-2 border rounded p-4 container-box"> <!-- Added container-box class -->
+    <div class="container mt-2 border rounded p-4 container-box-main"> <!-- Added container-box-main class -->
+        <div class="container border rounded p-4 mt-4 ">
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <button id="FilePathBtn1" class="btn btn-primary fixed-width-btn">Picking</button>
+                </div>
+                <div class="col-auto">
+                    <button id="FilePathBtn3" class="btn btn-primary fixed-width-btn">Short Dist</button>
+                </div>
+                <div class="col-auto">
+                    <button id="FilePathBtn4" class="btn btn-primary fixed-width-btn">Layout 1</button>
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="d-flex flex-column justify-content-center align-items-center mt-3">
@@ -73,63 +118,17 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="container mt-2 border rounded p-4 container-box">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5">
             <div class="col text-center">
                 <img id="my_image" src="data_decision/L1N1/L2N1/L3N1/L4N1/L5N1/Image.png" class="img-fluid" alt="Responsive image">
             </div>
         </div>
     </div>
 
-    <div class="container mt-2 border rounded p-4 container-box">
+    <div class="container mt-2 border rounded p-4 container-box-main">
         <div class="row justify-content-center">
             <div class="typewriter">
                 <h3 id="typewriter-text"></h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mt-2 mb-2 border rounded p-4 container-box">
-        <div class="row mb-5 justify-content-center">
-            <div class="col-auto">
-                <h3>About this experiment</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-auto">
-                <p>The purpose of this experiment is to evaluate whether LLMs can be used for decision-making in collaborative tasks to enhance efficiency and safety by providing a high-level coding approach with emergent thinking properties, thereby reducing the need for explicit condition descriptions. We assume it encapsulates a certain common reasoning akin to that of a typical user. To ensure a safe collaboration between humans and robots, it is imperative to intervene whenever the robot poses a risk to the user. Common interventions include reducing speed and adjusting path planning. In conjunction with safety method porposed in the Safety part, we propose halting the robot when safety cannot be guaranteed. However, to prevent prolonged immobilization, we suggest employing a GPT decision maker to alter the current course of action. This could involve waiting, withdrawing from the current position, or pursuing a different objective. </p>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-auto">
-                <p>The robot's objective is to collect cubes and stack them together with a human collaborator. Four main parameters define different experiment scenarios. Firstly, the robot can either pick up a cube or place one. Secondly, the robot may encounter obstacles leading to its immobilization: the user could increase the safety index (SI) by moving closer to the robot, affecting the robot's speed, or obstruct the robot's path, rendering it unable to reach its objective. These interruptions occur at various distances from the current objective (between the end-effector of the robot and the current objective): short, medium, and long distances. A short distance is considered to be smaller than 20cm, a medium desitance would be between 20cm and 40cm and a larger disance is whenever the distance is bigger than 40cm.  Additionally, as depicted in the figure below, four different layouts will be explored. The first layout (on the left) presents another cube close to the current one for the robot to pick up. In the subsequent experiment, the robot still has another cube available but it is located much further away. The following experiment investigates GPT's decision-making when no other cubes are accessible for pickup. Lastly, the remaining layout examines scenarios where multiple cubes are available, both nearby and at a distance from the current layout. Each layout is tested for every possible parameter combination mentionned above. The goal of testing all of the following parameters is to attempt to recreate the most common scenarios that the robot can encounter while working on his task. </p>
-            </div>
-        </div>
-        <div class="row justify-content-around">
-            <div class="col text-center">
-                <img id="exp_image" src="data_decision/Image.png" class="img-fluid global_image_safety" alt="Responsive image">
-            </div>
-        </div>
-        <div class="row mb-2 mt-2">
-            <div class="col-auto">
-                <p>GPT receives the current state informations and based on the following he decides which action is most suited for the situation. The decision given by GPT is displayed as a prompt in the container above. You are welcome to give your opinion via the page named survey. For any question you may have, please feel free to ask it on the github page. </p>
-            </div>
-        </div>
-
-        <div class="row justify-content-around">
-            <div class="col text-center">
-                <h3>3 different images to display the decisions that the robot can take</h3>
-            </div>
-        </div>
-    </div>
-    
-    <div class="container container-box border rounded p-4 mt-4 ">
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <h3>Results</h3>
-                <h3>Coming </h3>
             </div>
         </div>
     </div>

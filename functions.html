@@ -43,38 +43,39 @@
         </div>
     </nav>
 
-    <div class="container container-box border rounded p-4 mt-4 ">
-        <div class="row justify-content-center">
+    <div class="container mt-2 mb-2 border rounded p-4 container-box-main">
+        <div class="row justify-content-center ">
             <div class="col-auto">
-                    <h2>Withdrawal methods</h2>
+                <h3>Withdrawal</h3>
             </div>
         </div>
-    </div>
 
-    <div class="container mt-2 mb-2 border rounded p-4 container-box">
+        <div class="row mb-2 mt-3">
+            <div class="col-auto">
+                <p class="text-justify">In this experiment, we delve into the intricacies of human-robot collaboration within a task-oriented framework. The task involves manipulating blocks placed on a table to stack them together. Central to this experiment is ensuring the safety of the human participant throughout their interaction with the robot. The initial trajectory of the robot is visually represented in blue, providing a clear depiction of its planned movements. There is no withdrawal implemented during this phase, allowing the robot to follow its programmed instructions uninterrupted. This initial phase serves as a representation against which subsequent trials, featuring withdrawal strategies, are compared. Withdrawal becomes imperative when the robot's trajectory brings it uncomfortably close to the human user. These instances are carefully monitored, and the human participant communicates their perceived safe zone to the robot. This safe zone delineates an area within which the user feels comfortable with the robot's proximity, thereby ensuring a sense of safety and mitigating the risk of collision or injury. The withdrawal methods are meticulously designed to address safety concerns while also exploring the potential of integrating LLMs to suggest 3D poses that lead to a change in trajectory. This integration of GPT-4 offers a novel approach to dynamically altering the robot's movements based on user input and perceived safety zones. By leveraging GPT-4 and evaluating various withdrawal methods, we aim to gain insights into optimal strategies for fostering safe human-robot collaboration. This experiment not only contributes to the development of robotic systems prioritizing user safety but also explores innovative avenues for leveraging AI technologies like GPT in interactive scenarios. It should be noted that the decision of withdrawing is made also by a LLMs as explained in the decision making process XX Add link XX.</p>
+            </div>
+        </div>
+
+    <div class="container p-4 mt-4 ">
         <div class="row justify-content-center">
-            <div class="col text-center">
-                <video id="myVideo" src="data_functions\Experiment.mp4" class="video" controls>
+            <div class="col-auto">
+                <video src="data_functions\Experiment.mp4" class="video_global" controls loop>
                     <source type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
         </div>
-
-        <div class="row justify-content-center mt-5">
+    </div>
+    
+    <div class="container container-box border rounded p-4 mt-4 ">
+        <div class="row justify-content-center">
             <div class="col-auto">
-                <h3>About this experiment</h3>
-            </div>
-        </div>
-
-        <div class="row mb-2">
-            <div class="col-auto">
-                <p class="text-justify">In this experiment, we delve into the intricacies of human-robot collaboration within a task-oriented framework. The task involves manipulating blocks placed on a table to stack them together. Central to this experiment is ensuring the safety of the human participant throughout their interaction with the robot. The initial trajectory of the robot is visually represented in blue, providing a clear depiction of its planned movements. There is no withdrawal implemented during this phase, allowing the robot to follow its programmed instructions uninterrupted. This initial phase serves as a representation against which subsequent trials, featuring withdrawal strategies, are compared. Withdrawal becomes imperative when the robot's trajectory brings it uncomfortably close to the human user. These instances are carefully monitored, and the human participant communicates their perceived safe zone to the robot. This safe zone delineates an area within which the user feels comfortable with the robot's proximity, thereby ensuring a sense of safety and mitigating the risk of collision or injury. The withdrawal methods are meticulously designed to address safety concerns while also exploring the potential of integrating LLMs to suggest 3D poses that lead to a change in trajectory. This integration of GPT-4 offers a novel approach to dynamically altering the robot's movements based on user input and perceived safety zones. By leveraging GPT-4 and evaluating various withdrawal methods, we aim to gain insights into optimal strategies for fostering safe human-robot collaboration. This experiment not only contributes to the development of robotic systems prioritizing user safety but also explores innovative avenues for leveraging AI technologies like GPT in interactive scenarios. It should be noted that the decision of withdrawing is made also by a LLMs as explained in the decision making process XX Add link XX.</p>
+                    <h2>Explore the data</h2>
             </div>
         </div>
     </div>
 
-    <div class="container container-box border rounded p-4 mt-4 ">
+    <div class="container mt-2 border rounded p-4 container-box-main"> 
         <div class="row justify-content-center">
             <div class="col-auto">
                 <div class="btn-group" role="group">
@@ -96,8 +97,6 @@
                   </div>
             </div>
         </div>
-    </div>
-    <div class="container mt-2 border rounded p-4"> 
         <div class="row justify-content-center">
             <div class="col-md-8 text-center"> 
                 <video id="dataVideo" src="data_functions/P1/P1/Video.mp4" class="video" controls loop>
@@ -112,13 +111,21 @@
             </div>
         </div>
     </div>
-
-    <div class="container mt-2 border rounded p-4 container-box"> 
+</div>
+    <div class="container container-box-main border rounded p-4 mt-5 mb-4">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="d-flex flex-column justify-content-center align-items-center mt-3"> 
-                    <h3> To be determined </h3>
-                </div>
+            <div class="col-auto">
+                <h3>Change Objective</h3>
+            </div>
+        </div>
+        <div class="row mb-2 mt-4">
+            <div class="col-auto">
+                <p> The robot is stopped while picking up a cube, which is not displayed to the user as depicted in the figure above. There are 25 cubes on the table from which the robot can choose to change objective based on the user input. Similar to the first experiment, the user's input can consist of commands either relative to the user or relative to objects in the scene. For instance, a command relative to the user might be: “Don't take cubes on the right”, while a command relative to other objects could be: “Take cubes that are close to the robot”. </p>
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col text-center">
+                <img id="exp_image" src="Figures/change_objective_example.png" class="img-fluid global_image_safety" alt="Responsive image">
             </div>
         </div>
     </div>
