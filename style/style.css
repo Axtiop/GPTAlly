@@ -20,6 +20,13 @@
    /* max-height: 90%; /* Ensure they don't exceed container height */
 }
 
+#dataVideo{
+    height: 300px; /* Maintain aspect ratio */
+    width: auto; /* Make both elements fill their container */
+    /*max-width: 60%; /* Ensure they don't exceed container width */
+   /* max-height: 90%; /* Ensure they don't exceed container height */
+}
+
 .video_global {
     height: 600px; /* Maintain aspect ratio */
     width: auto; /* Make both elements fill their container */
@@ -83,6 +90,7 @@
 
 .global_image_safety{
     width: 60%;
+    height: auto;
 }
 
 .exp_image{
@@ -128,6 +136,10 @@ p {
             width: 100%;
             height: auto;
         }
+        .global_image_safety{
+            width: 60%;
+            height: auto;
+        }
     }
 
     @media (max-width: 1300px){
@@ -135,6 +147,13 @@ p {
             width: 60%;
             height: auto;
             
+        }
+        #dataVideo{
+            
+            width: 80%; /* Make both elements fill their container */
+            height: auto; /* Maintain aspect ratio */
+            /*max-width: 60%; /* Ensure they don't exceed container width */
+           /* max-height: 90%; /* Ensure they don't exceed container height */
         }
     }
     @media (max-width: 576px) { /* Adjust for smaller devices */
@@ -153,6 +172,7 @@ p {
         }
         .global_image_safety{
             width: 100%;
+            height: auto;
         }
         #exp_image_GPT{
             width: 100%;
