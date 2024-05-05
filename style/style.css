@@ -85,9 +85,36 @@
     width: 60%;
 }
 
+.exp_image{
+    width: 100%;
+    height: auto;
+}
 .text-justify {
     text-align: justify;
     text-justify: distribute;
+}
+
+h3 {
+    font-family: "Times New Roman", Times, serif; /* Specify serif font */
+}
+h4 {
+    font-family: "Times New Roman", Times, serif; /* Specify serif font */
+}
+h5 {
+    font-family: "Times New Roman", Times, serif; /* Specify serif font */
+}
+h1 {
+    font-family: "Times New Roman", Times, serif; /* Specify serif font */
+}
+p {
+    width: 100%;
+    font-family: "Times New Roman", Times, serif; /* Specify serif font */
+}
+
+#exp_image_GPT{
+    width: 40%;
+    height: auto;
+    
 }
 
     @media (max-width: 2300px) {
@@ -97,8 +124,19 @@
             /*max-width: 60%; /* Ensure they don't exceed container width */
            /* max-height: 90%; /* Ensure they don't exceed container height */
         }
+        .video_global {
+            width: 100%;
+            height: auto;
+        }
     }
 
+    @media (max-width: 1300px){
+        #exp_image_GPT{
+            width: 60%;
+            height: auto;
+            
+        }
+    }
     @media (max-width: 576px) { /* Adjust for smaller devices */
         .fixed-width-btn {
             width: 100%; /* Make buttons full width on smaller devices */
@@ -115,5 +153,10 @@
         }
         .global_image_safety{
             width: 100%;
+        }
+        #exp_image_GPT{
+            width: 100%;
+            height: auto;
+            
         }
     }  
