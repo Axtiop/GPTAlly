@@ -68,7 +68,7 @@ const changeVideoBtn4 = document.getElementById('FilePathBtn4');
 var img = document.getElementById("my_image");
 let videoCounterBtn1 = 1; let videoCounterBtn3 = 1; let videoCounterBtn4 = 1;
 let newSource =  `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/Video.mp4`;
-let newImg = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/Image.png`;
+let newImg = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/img.png`;
 const namesBtn1 = ['Picking', 'Placing']; 
 //const namesBtn2 = ['SI', 'Path-Planning']; 
 const namesBtn2 = ['SI'];
@@ -87,7 +87,7 @@ changeVideoBtn1.addEventListener('click', function() {
     videoCounterBtn1 = (videoCounterBtn1 % namesBtn1.length ) + 1;
     changeVideoBtn1.textContent = namesBtn1[videoCounterBtn1 - 1]
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/Video.mp4`;
-    img.src = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/Image.png`;
+    img.src = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/img.png`;
     changeVideoSource(newSource);
     csvSource = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/data.csv`;
     clearChartData();
@@ -100,7 +100,7 @@ changeVideoBtn3.addEventListener('click', function() {
     videoCounterBtn3 = (videoCounterBtn3 % namesBtn3.length ) + 1;
     changeVideoBtn3.textContent = namesBtn3[videoCounterBtn3 - 1]
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/Video.mp4`;
-    img.src = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/Image.png`;
+    img.src = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/img.png`;
     changeVideoSource(newSource);
     csvSource = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/data.csv`;
     clearChartData();
@@ -112,7 +112,7 @@ changeVideoBtn4.addEventListener('click', function() {
     videoCounterBtn4 = (videoCounterBtn4 % namesBtn4.length ) + 1;
     changeVideoBtn4.textContent = namesBtn4[videoCounterBtn4 - 1]
     newSource = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/Video.mp4`;
-    img.src = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/Image.png`;
+    img.src = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/img.png`;
     changeVideoSource(newSource);
     csvSource = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/data.csv`;
     clearChartData();

@@ -125,16 +125,17 @@ p {
     
 }
 
+#my_image_dm{
+    width: 50%;
+    height: auto;
+}
+
     @media (max-width: 2300px) {
         .video {
             width: 80%; /* Make both elements fill their container */
             height: auto;
             /*max-width: 60%; /* Ensure they don't exceed container width */
            /* max-height: 90%; /* Ensure they don't exceed container height */
-        }
-        .video_global {
-            width: 100%;
-            height: auto;
         }
         .global_image_safety{
             width: 60%;
@@ -148,12 +149,20 @@ p {
             height: auto;
             
         }
+        .video_global {
+            width: 100%;
+            height: auto;
+        }
         #dataVideo{
             
             width: 80%; /* Make both elements fill their container */
             height: auto; /* Maintain aspect ratio */
             /*max-width: 60%; /* Ensure they don't exceed container width */
            /* max-height: 90%; /* Ensure they don't exceed container height */
+        }
+        #my_image_dm{
+            width: 80%;
+            height: auto;
         }
     }
     @media (max-width: 576px) { /* Adjust for smaller devices */
@@ -178,5 +187,9 @@ p {
             width: 100%;
             height: auto;
             
+        }
+        #my_image_dm{
+            width: 80%;
+            height: auto;
         }
     }  
