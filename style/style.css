@@ -102,6 +102,15 @@
     text-justify: distribute;
 }
 
+.btn-with-logo {
+    border-radius: 20px; /* Adjust the border radius as needed */
+  }
+
+  /* Hover effect */
+.btn-with-logo:hover {
+    color: #cb6161; /* Change border color on hover */
+  }
+
 h3 {
     font-family: "Times New Roman", Times, serif; /* Specify serif font */
 }
