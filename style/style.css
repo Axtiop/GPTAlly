@@ -3,15 +3,16 @@
 }
 
 .container-box:hover {
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 6px rgba(60, 74, 229, 0.5);
 }
 
 .container-box-main {
+    width:80%;
     transition: box-shadow 0.3s ease;
 }
 
 .container-box-main:hover {
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 6px rgba(60, 74, 229, 0.5);
 }
 .video {
     height: 300px; /* Maintain aspect ratio */
@@ -150,9 +151,14 @@ p {
             width: 60%;
             height: auto;
         }
+        .video_global {
+            height: 400px;
+            width: auto;
+            
+        }
     }
 
-    @media (max-width: 1300px){
+    @media (max-width: 900px){
         #exp_image_GPT{
             width: 60%;
             height: auto;
