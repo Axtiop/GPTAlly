@@ -65,7 +65,7 @@ const video = document.getElementById('myVideo');
 const changeVideoBtn1 = document.getElementById('FilePathBtn1');
 const changeVideoBtn3 = document.getElementById('FilePathBtn3');
 const changeVideoBtn4 = document.getElementById('FilePathBtn4');
-var img = document.getElementById("my_image");
+var img = document.getElementById("my_image_dm");
 let videoCounterBtn1 = 1; let videoCounterBtn3 = 1; let videoCounterBtn4 = 1;
 let newSource =  `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/Video.mp4`;
 let newImg = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/img.png`;
