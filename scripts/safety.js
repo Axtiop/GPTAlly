@@ -70,7 +70,7 @@ let newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.
 const namesBtn1 = ['Experiment 1', 'Experiment 2', 'Experiment 3']; 
 const namesBtn2 = ['Prompt 1', 'Prompt 2', 'Prompt 3']; 
 const text_list = ["Prompt: I feel very confident around robots", "Prompt: I feel neutral around robots", "Prompt: I feel very scared around robots"];
-let csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
+let csvSource = `https://axtiop.github.io/GPTAlly/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
 
 function changeVideoSource(newSource) {
     remove_writing();
@@ -86,7 +86,7 @@ changeVideoBtn1.addEventListener('click', function() {
     changeVideoBtn1.textContent = namesBtn1[videoCounterBtn1 - 1]
     newSource = `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
     changeVideoSource(newSource);
-    csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
+    csvSource = `https://axtiop.github.io/GPTAlly/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
     clearChartData();
     clearInterval(interval);
     restartVideo();
@@ -99,7 +99,7 @@ changeVideoBtn2.addEventListener('click', function() {
     text = text_list[videoCounterBtn2 - 1]
     newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
     changeVideoSource(newSource);
-    csvSource = `https://axtiop.github.io/GPTGuardian_display/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
+    csvSource = `https://axtiop.github.io/GPTAlly/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
     clearChartData();
     clearInterval(interval);
     restartVideo();
@@ -322,6 +322,6 @@ function remove_writing() {
 
 window.onload = function() {
     waiting_typing();
-    fetch_data("https://axtiop.github.io/GPTGuardian_display/data_safety/Exp1/F1/data.csv");
+    fetch_data("https://axtiop.github.io/GPTAlly/data_safety/Exp1/F1/data.csv");
 };  
 
