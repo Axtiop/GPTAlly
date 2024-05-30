@@ -323,6 +323,6 @@ function remove_writing() {
 
 window.onload = function() {
     waiting_typing();
-    fetch_data("https://axtiop.github.io/GPTGuardian_display/data_safety/Exp1/F1/data.csv");
+    fetch_data("https://axtiop.github.io/GPTAlly/data_safety/Exp1/F1/data.csv");
 };  
 

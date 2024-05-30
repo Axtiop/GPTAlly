@@ -70,7 +70,7 @@ const title = document.getElementById('experiment_id');
 let videoCounterBtn1 = 1; let videoCounterBtn2 = 1; let videoCounterBtn3 = 1; let videoCounterBtn4 = 1; let videoCounterBtn5 = 1;
 let newSource =  `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Video.mp4`;
 let newImg = `data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/Image.png`;
-let csvSource = `https://axtiop.github.io/GPTGuardian_display/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
+let csvSource = `https://axtiop.github.io/GPTAlly/data_decision/L1N${videoCounterBtn1}/L2N${videoCounterBtn2}/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N${videoCounterBtn5}/data.csv`;
 
 function changeVideoSource(newSource) {
     video.src = newSource;
@@ -252,7 +252,7 @@ video.currentTime = 0; // Set current time to 0 (start of the video)
 }
 
 window.onload = function() {
-    fetch_data("https://axtiop.github.io/GPTGuardian_display/data_decision/L1N1/L2N1/L3N1/L4N1/L5N1/data.csv");
+    fetch_data("https://axtiop.github.io/GPTAlly/data_decision/L1N1/L2N1/L3N1/L4N1/L5N1/data.csv");
 }; 
 
 
