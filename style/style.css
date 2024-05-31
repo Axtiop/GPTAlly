@@ -140,6 +140,7 @@ p {
     height: auto;
 }
 
+
     @media (max-width: 2300px) {
         .video {
             width: 80%; /* Make both elements fill their container */
@@ -186,11 +187,17 @@ p {
             margin-bottom: 5px; /* Add some space between buttons */
         }
         .video {
-            height: 200px; /* Maintain aspect ratio */
+            height: 150px; /* Maintain aspect ratio */
             width: auto; /* Make both elements fill their container */
             /*max-width: 60%; /* Ensure they don't exceed container width */
            /* max-height: 90%; /* Ensure they don't exceed container height */
         }
+
+        #myChart{
+            height: 150px; /* Maintain aspect ratio */
+            width: auto;
+        }
+        
         .img-fluid{
             width: 100%;
         }
