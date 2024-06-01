@@ -141,6 +141,12 @@ p {
     height: auto;
 }
 
+.alert-sticky {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1050; /* Bootstrap uses a z-index of 1040 for modals */
+  }
 
     @media (max-width: 2300px) {
         .video {
