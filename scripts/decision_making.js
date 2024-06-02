@@ -76,8 +76,11 @@ const namesBtn3 = ['Short dist', 'Moderate dist', 'Long dist'];
 const namesBtn4 = ['Layout 1', 'Layout 2', 'Layout 3', 'Layout 4'];
 const namesBtn5 = ['Prompt 1'];
 let csvSource = `data_decision/L1N${videoCounterBtn1}/L2N1/L3N${videoCounterBtn3}/L4N${videoCounterBtn4}/L5N1/data.csv`;
+let intervalActive = false; 
 
 function changeVideoSource(newSource) {
+    startBtn.textContent = "Play";
+    intervalActive = false;
     stopVideo();
     video.src = newSource;
     video.load();
@@ -128,6 +131,7 @@ var stopBtn = document.getElementById('stopDataBtn');
 var classdanger =  ["btn", "btn-danger" ,"mb-3"]
 var classwarning = ["btn", "btn-warning" ,"mb-3"]
 
+
 document.getElementById('displayDataBtn').addEventListener('click', function () {
     if(CounterBtn1 === 0){
         CounterBtn1 = 1;
@@ -140,10 +144,13 @@ document.getElementById('displayDataBtn').addEventListener('click', function () 
         stopBtn.textContent = "Pause";
         startBtn.textContent = "Resume";
     }
-    start_typing();
+    
     updateChart();
     playVideo();
-    interval = setInterval(updateChart, 100);
+    if (!intervalActive) { // Only set the interval if it is not already active
+        interval = setInterval(updateChart, 100);
+        intervalActive = true; // Mark interval as active
+    }
 });
 
 document.getElementById('stopDataBtn').addEventListener('click', function () {
@@ -158,6 +165,7 @@ document.getElementById('stopDataBtn').addEventListener('click', function () {
         stopBtn.textContent = "Stop";
         startBtn.textContent = "Resume";
         clearInterval(interval);
+        intervalActive = false;
         stopVideo();
     } else {
         CounterBtn1 = 1;
@@ -168,16 +176,15 @@ document.getElementById('stopDataBtn').addEventListener('click', function () {
             stopBtn.classList.add(className);
         });
         stopBtn.textContent = "Pause";
-        startBtn.textContent = "Display Data";
+        startBtn.textContent = "Play";
         // there the data should also be stopped
-        remove_writing();
         clearChartData();
         clearInterval(interval);
+        intervalActive = false;
         restartVideo();
     }
 
 });
-
 
 var speeds = [];
 var SI = [];
@@ -210,7 +217,7 @@ if (dataIndex >= 100) {
     data2.shift();
 }
     data.push(SI[dataIndex]);
-    data2.push(speeds[dataIndex]);
+    data2.push(Math.abs(speeds[dataIndex]-1));
 
     const labels = Array.from({ length: data.length }, (_, i) => (i + 1).toString());
     myChart.data.labels = labels.map((_, i) => (i + 1 + dataIndex - data.length).toString());
@@ -315,6 +322,6 @@ function remove_writing() {
 
 
 window.onload = function() {
-    waiting_typing();
+    
     fetch_data("data_decision/L1N1/L2N1/L3N1/L4N1/L5N1/data.csv");
 }; 

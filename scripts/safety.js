@@ -69,10 +69,13 @@ let videoCounterBtn1 = 1; let videoCounterBtn2 = 1
 let newSource =  `data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/Video.mp4`;
 const namesBtn1 = ['Experiment 1', 'Experiment 2', 'Experiment 3']; 
 const namesBtn2 = ['Prompt 1', 'Prompt 2', 'Prompt 3']; 
-const text_list = ["Prompt: I feel very confident around robots", "Prompt: I feel neutral around robots", "Prompt: I feel very scared around robots"];
+const text_list = ["I feel very confident around robots", "I feel neutral around robots", "I feel very scared around robots"];
 let csvSource = `https://axtiop.github.io/GPTAlly/data_safety/Exp${videoCounterBtn1}/F${videoCounterBtn2}/data.csv`;
+let intervalActive = false; 
 
 function changeVideoSource(newSource) {
+    startBtn.textContent = "Play";
+    intervalActive = false; 
     remove_writing();
     clearChartData();
     clearInterval(interval);
@@ -113,6 +116,7 @@ var stopBtn = document.getElementById('stopDataBtn');
 var classdanger =  ["btn", "btn-danger" ,"mb-3"]
 var classwarning = ["btn", "btn-warning" ,"mb-3"]
 
+
 document.getElementById('displayDataBtn').addEventListener('click', function () {
     if(CounterBtn1 === 0){
         CounterBtn1 = 1;
@@ -125,10 +129,14 @@ document.getElementById('displayDataBtn').addEventListener('click', function () 
         stopBtn.textContent = "Pause";
         startBtn.textContent = "Resume";
     }
-    start_typing();
+    
     updateChart();
     playVideo();
-    interval = setInterval(updateChart, 100);
+    if (!intervalActive) { // Only set the interval if it is not already active
+        interval = setInterval(updateChart, 100);
+        start_typing();
+        intervalActive = true; // Mark interval as active
+    }
 });
 
 document.getElementById('stopDataBtn').addEventListener('click', function () {
@@ -143,6 +151,7 @@ document.getElementById('stopDataBtn').addEventListener('click', function () {
         stopBtn.textContent = "Stop";
         startBtn.textContent = "Resume";
         clearInterval(interval);
+        intervalActive = false;
         stopVideo();
     } else {
         CounterBtn1 = 1;
@@ -153,11 +162,12 @@ document.getElementById('stopDataBtn').addEventListener('click', function () {
             stopBtn.classList.add(className);
         });
         stopBtn.textContent = "Pause";
-        startBtn.textContent = "Display Data";
+        startBtn.textContent = "Play";
         // there the data should also be stopped
         remove_writing();
         clearChartData();
         clearInterval(interval);
+        intervalActive = false;
         restartVideo();
     }
 
@@ -193,7 +203,7 @@ if (dataIndex >= 100) {
     data2.shift();
 }
     data.push(SI[dataIndex]);
-    data2.push(speeds[dataIndex]);
+    data2.push(Math.abs(speeds[dataIndex] -1));
 
     const labels = Array.from({ length: data.length }, (_, i) => (i + 1).toString());
     myChart.data.labels = labels.map((_, i) => (i + 1 + dataIndex - data.length).toString());
@@ -234,7 +244,7 @@ video.currentTime = 0; // Set current time to 0 (start of the video)
 // -----------------------------------------------
 // ------------- Type writer ---------------------
 // -----------------------------------------------
-let text = "Prompt: I feel very confident around robots !";
+let text = "I feel very confident around robots !";
 const delay = 20; 
 
 const textElement = document.getElementById('typewriter-text');
@@ -258,13 +268,13 @@ function type() {
 }
 
 function waiting_typing(){
-    textElement.innerHTML = '_';
+    textElement.innerHTML = 'User: ';
     waiting_interval = setInterval(() => {
     // Add or remove the cursor effect
-    if (textElement.innerHTML.endsWith('|')) {
+    if (textElement.innerHTML.endsWith('_')) {
         textElement.innerHTML = textElement.innerHTML.slice(0, -1);
     } else {
-        textElement.innerHTML += '|';
+        textElement.innerHTML += '_';
     }
 }, 500);
 }
@@ -272,52 +282,59 @@ function waiting_typing(){
 // Start the typewriter effect when the page loads
 let has_typed = 0;
 function start_typing() {
-has_typed = 1;
-clearInterval(waiting_interval);
-textElement.innerHTML = ''; // Clear existing text
-type();
-global_interval = setInterval(() => {
-    // Add or remove the cursor effect
-    if(index >= text.length){
-        if (textElement.innerHTML.endsWith('|')) {
-            textElement.innerHTML = textElement.innerHTML.slice(0, -1);
-        } else {
-            textElement.innerHTML += '|';
+    index = 0;
+    has_typed = 1;
+    clearInterval(waiting_interval);
+    textElement.innerHTML = 'User: '; // Clear existing text
+    type();
+    global_interval = setInterval(() => {
+        // Add or remove the cursor effect
+        if(index >= text.length){
+            if (textElement.innerHTML.endsWith('|')) {
+                textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+            } else {
+                textElement.innerHTML += '|';
+            }
         }
-    }
-}, 500); 
+    }, 500); 
 
 };
+
+let removeInterval;
 
 function remove_writing() {
     clearInterval(waiting_interval);
     try {
         clearInterval(global_interval);
-     } catch(ex) {
-        //handle the error, where ex or what ever you choose to call it is your exception reference
-     } finally {
-        if(has_typed > 0){
+    } catch(ex) {
+        // Handle the error
+    } finally {
+        if (has_typed > 0) {
             clearInterval(global_interval);
         }
         has_typed = 0;
-        
         index = 0;
-        const removeInterval = setInterval(() => {
+
+        // Clear the previous removeInterval if it exists
+        if (removeInterval) {
+            clearInterval(removeInterval);
+        }
+
+        removeInterval = setInterval(() => {
             if (textElement.innerHTML.length > 0) {
                 textElement.innerHTML = textElement.innerHTML.slice(0, -1);
             } else {
-                clearInterval(removeInterval); 
+                clearInterval(removeInterval);
                 index = 0;
                 waiting_typing();
-    
+
                 if (baseFontSize !== 24) {
                     baseFontSize = 24;
                     textElement.style.fontSize = baseFontSize + "px";
                 }
             }
         }, 20);
-     }
-    
+    }
 }
 
 window.onload = function() {
