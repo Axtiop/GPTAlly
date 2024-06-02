@@ -52,17 +52,17 @@
         </div>
         <div class="row">
             <div class="col-auto">
-                <p class="text-justify lead fs-6">The purpose of this experiment is to evaluate if LLMs can incorporate human perception of safety into safety evaluations. Given that GPT is trained on natural language, we assume it encapsulates a certain perception of safety. To ensure a safe collaboration between humans and robots, it is imperative to intervene whenever the robot poses a risk to the user. Common interventions include reducing speed and adjusting path planning. The following method combines a safety index proposed by Gustavo Garcia [ADD LINK] and a multiplicative factor computed by GPT. The following is determined based on a prompt given by the user prior to the experiment (an extension to this work will offer the opportunity to change this factor while the experiment is ongoing). It ranges from 0 to 2 with 0 removing entirely the safety of the robot and 2 making the robot unable to move while a user is in its workspace. </p>
+                <p class="text-justify lead fs-6">The purpose of this experiment is to evaluate if LLMs can incorporate human perception of safety into safety evaluations. Given that GPT is trained on natural language, we assume it encapsulates a certain perception of safety. To ensure a safe collaboration between humans and robots, it is imperative to intervene whenever the robot poses a risk to the user. Common interventions include reducing speed and adjusting path planning. The following method combines a safety index proposed by <a href="https://link.springer.com/chapter/10.1007/978-3-319-33581-0_14" class="text-warning">Garcia et al.</a> and a multiplicative factor computed by GPT. The following is determined based on a prompt given by the user prior to the experiment (an extension to this work will offer the opportunity to change this factor while the experiment is ongoing). It ranges from 0 to 2 with 0 removing entirely the safety of the robot and 2 making the robot unable to move while a user is in its workspace. </p>
             </div>
         </div>
         <div class="row mb-2">
             <div class="col-auto">
-                <p class="text-justify lead fs-6">The robot's objective is to collect cubes and stack them together with a human collaborator. Three experiments are presented below, each representing a different level of difficulty, with the experiment on the left considered the easiest and the one on the right the hardest. In each experiment, two extreme prompts are provided by the user: "I am very confident." and "I am very afraid of robots." These are compared to a neutral prompt that generates a GPT factor of 1.0, resulting in an almost identical Safety Index to that proposed by Gustavo Garcia. In the first experiment, the robot must stack cubes on the left side of the user, while the user stacks cubes on his right. This situation is considered easy since interaction between the robot and user is unlikely. The second experiment is more challenging as both the robot and user collect cubes from the same location (not necessarily on the same side). Finally, in the third experiment, the robot must place cubes into the user's hand. This is particularly challenging as the robot must approach the user closely while moving toward him. If the safety index is too high due to the prompt, the robot is unlikely to accomplish its task.</p>
+                <p class="text-justify lead fs-6">The robot's objective is to collect cubes and stack them together with a human collaborator. Three experiments are presented below, each representing a different level of difficulty, with the experiment on the left considered the easiest and the one on the right the hardest. In each experiment, two extreme prompts are provided by the user: "I am very confident." and "I am very afraid of robots." These are compared to a neutral prompt that generates a GPT factor of 1.0, resulting in an almost identical Safety Index to that proposed by <a href="https://link.springer.com/chapter/10.1007/978-3-319-33581-0_14" class="text-warning">Garcia et al.</a> In the first experiment, the robot must stack cubes on the left side of the user, while the user stacks cubes on his right. This situation is considered easy since interaction between the robot and user is unlikely. The second experiment is more challenging as both the robot and user collect cubes from the same location (not necessarily on the same side). Finally, in the third experiment, the robot must place cubes into the user's hand. This is particularly challenging as the robot must approach the user closely while moving toward him. If the safety index is too high due to the prompt, the robot is unlikely to accomplish its task.</p>
             </div>
         </div>
         <div class="row justify-content-around">
             <div class="col text-center">
-                <img src="Figures/Exp1_rep.png" class="global_image_safety" alt="Responsive image">
+                <img src="Figures/Exp1_global.png" class="global_image_safety" alt="Responsive image">
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col text-center">
-                <img src="Figures/GPT_factor.png" class="global_image_safety" alt="Responsive image">
+                <img src="Figures/GPT_factor_v2.png" class="global_image_safety" alt="Responsive image">
             </div>
         </div>
         <div class="row mt-5 mb-2 text-center">
@@ -91,7 +91,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col text-center">
-                <img src="Figures/Table_prompts.png" class="global_image_safety" alt="Responsive image">
+                <img src="Figures/Table_prompts_v2.png" class="global_image_safety" alt="Responsive image">
             </div>
         </div>
     </div>

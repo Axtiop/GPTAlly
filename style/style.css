@@ -12,9 +12,23 @@
     transition: box-shadow 0.3s ease;
 }
 
+
 .container-box-main:hover {
     box-shadow: 0 0 6px rgba(60, 74, 229, 0.5);
 }
+
+.container-red:hover {
+    box-shadow: 0 0 12px rgba(243, 81, 56, 0.5);
+}
+
+.container-green:hover {
+    box-shadow: 0 0 12px rgba(3, 189, 58, 0.5);
+}
+
+.container-black:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
 .video {
     height: 300px; /* Maintain aspect ratio */
     width: auto; /* Make both elements fill their container */
@@ -68,6 +82,40 @@
 .bg-light-nav-custom{
     background-color: #ecf0f1;
 }
+
+.navbar-brand {
+    margin-right: 20px;
+}
+
+.nav-item {
+    margin-right: 15px;
+}
+
+.navbar {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.nav-link {
+    font-weight: 600;
+}
+
+.bg-light-nav-custom {
+    background: linear-gradient(to right, #ffffff, #c7ccf7, rgba(60, 74, 229, 0.5)); /* Gradient background */
+}
+
+.bg-light-nav-custom {
+    background-color: #ffffff; /* Light background */
+    border-bottom: 1px solid #ddd; /* Optional bottom border */
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #0263ca; /* Link color */
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #0056b3; /* Hover color */
+}
+
 .typewriter {
     overflow: hidden;
     white-space: nowrap; /* Prevent line breaks */
@@ -110,7 +158,7 @@
 
   /* Hover effect */
 .btn-with-logo:hover {
-    color: #cb6161; /* Change border color on hover */
+    color: rgb(255, 193, 7); /* Change border color on hover */
   }
 
 h3 {
