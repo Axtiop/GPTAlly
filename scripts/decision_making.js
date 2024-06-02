@@ -217,7 +217,7 @@ if (dataIndex >= 100) {
     data2.shift();
 }
     data.push(SI[dataIndex]);
-    data2.push(Math.abs(speeds[dataIndex]-1));
+    data2.push(-1*(speeds[dataIndex] -1));
 
     const labels = Array.from({ length: data.length }, (_, i) => (i + 1).toString());
     myChart.data.labels = labels.map((_, i) => (i + 1 + dataIndex - data.length).toString());
