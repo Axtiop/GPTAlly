@@ -1,4 +1,5 @@
 let changeVideoBtn = document.getElementById("changeData");
+let changePromptBtn = document.getElementById("changeprompt");
 let video = document.getElementById('dataVideo');
 let newSource =  `data_functions/P1/P1/Video.mp4`;
 let promptsrc = 1;
@@ -14,16 +15,19 @@ function changeVideoSource(i) {
 
 for (let i = 1; i <= 10; i++) {
     let prompt = document.getElementById(`prompt${i}`);
-    console.log(`prompt${i}`)
-    prompt.addEventListener('click', function() {
+    console.log(`prompt${i}`);
+    prompt.addEventListener('click', function(event) {
+        event.preventDefault();
         changeVideoSource(i);
     });
 }
+
 changeVideoBtn.addEventListener('click', function(event) {
     event.preventDefault();
     pointCounter = (pointCounter % 3 ) + 1;
     changeVideoSource(promptsrc);
 });
+
 
 function playVideo() {
     video.play();

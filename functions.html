@@ -9,37 +9,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
 
     <title>GPTAlly</title>
 </head>
 <body>
 
-    <nav class="navbar navbar-light bg-light-nav-custom">
+    <nav class="navbar navbar-light bg-light-nav-custom navbar-expand-lg">
         <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Main</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="safety_evaluation.html">Safety</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="decision_making.html">Decision Making</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="functions.html">Functions</a>
-            </li>
-            </ul>
-        </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Main</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="safety_evaluation.html">Safety</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="decision_making.html">Decision Making</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="functions.html">Functions</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
-
     <div class="alert alert-danger alert-dismissible fade show alert-sticky" role="alert">
         <strong>Website still in progress, </strong> it will be final on the 21st of June !
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -81,7 +80,7 @@
         <div class="row justify-content-center">
             <div class="col-auto">
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button  id="changeprompt" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Prompts
                     </button>
                     <ul class="dropdown-menu">
@@ -109,7 +108,7 @@
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-md-6 text-center"> 
-                <button id="changeData" class="btn btn-primary mb-3" style="width: 40%;">other example</button>
+                <button id="changeData" class="btn btn-primary mb-3" style="width: 50%;">Other trajectory</button>
             </div>
         </div>
     </div>

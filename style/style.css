@@ -8,7 +8,7 @@
 }
 
 .container-box-main {
-    width:80%;
+    width:90%;
     transition: box-shadow 0.3s ease;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .navbar {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Kreon', serif;
 }
 
 .nav-link {
@@ -109,11 +109,30 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #0263ca; /* Link color */
+    color: #000000; /* Link color */
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
     color: #0056b3; /* Hover color */
+}
+
+.navbar-nav .nav-link {
+    border: 2px solid transparent;
+    padding: 5px 15px;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    /*background-color:  rgba(255, 255, 255, 0.5);
+    border-color: rgba(60, 74, 229, 0.5);*/
+    color: rgba(60, 74, 229) !important;
+}
+
+.navbar-nav .nav-link.active {
+    /*background-color: rgba(60, 74, 229, 0.5);*/
+    color: rgba(60, 74, 229) !important;
+    /*border-color: rgba(60, 74, 229, 0.5);*/
 }
 
 .typewriter {
@@ -162,20 +181,20 @@
   }
 
 h3 {
-    font-family: "Times New Roman", Times, serif; /* Specify serif font */
+    font-family: 'Kreon', serif;
 }
 h4 {
-    font-family: "Times New Roman", Times, serif; /* Specify serif font */
+    font-family: 'Kreon', serif;
 }
 h5 {
-    font-family: "Times New Roman", Times, serif; /* Specify serif font */
+    font-family: 'Kreon', serif;
 }
 h1 {
-    font-family: "Times New Roman", Times, serif; /* Specify serif font */
+    font-family: 'Kreon', serif;
 }
 p {
     width: 100%;
-    font-family: "Times New Roman", Times, serif; /* Specify serif font */
+    font-family: 'Kreon', serif;
 }
 
 #exp_image_GPT{
@@ -189,6 +208,10 @@ p {
     height: auto;
 }
 
+#myChart {
+    width:400px;
+    height:200px;
+}
 .alert-sticky {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
@@ -248,9 +271,9 @@ p {
            /* max-height: 90%; /* Ensure they don't exceed container height */
         }
 
-        #myChart{
-            height: 150px; /* Maintain aspect ratio */
-            width: auto;
+        #myChart {
+            height:100px;
+            width:auto;
         }
         
         .img-fluid{
@@ -268,5 +291,9 @@ p {
         #my_image_dm{
             width: 80%;
             height: auto;
+        }
+        .container-box-main {
+            width:95%;
+            transition: box-shadow 0.3s ease;
         }
     }  
