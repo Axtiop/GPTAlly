@@ -99,9 +99,11 @@
     font-weight: 600;
 }
 
+/*
 .bg-light-nav-custom {
-    background: linear-gradient(to right, #ffffff, #c7ccf7, rgba(60, 74, 229, 0.5)); /* Gradient background */
+    background: linear-gradient(to right, #ffffff, #c7ccf7, rgba(60, 74, 229, 0.5)); 
 }
+*/
 
 .bg-light-nav-custom {
     background-color: #ffffff; /* Light background */
