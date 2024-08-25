@@ -30,24 +30,24 @@
                         <a class="nav-link active" href="index.html">Main</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="safety_evaluation.html">Safety</a>
+                        <a class="nav-link" href="safety_evaluation.html">Safety Evaluation</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="decision_making.html">Decision Making</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="functions.html">Functions</a>
+                        <a class="nav-link" href="functions.html">Robot Engine</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
+      <!--
       <div class="alert alert-danger alert-dismissible fade show alert-sticky" role="alert">
         <strong>Website still in progress, </strong> it will be final on the 24th of June !
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
-
+      -->
     <div class="container container-box-main border rounded p-4 mt-4 ">
         <div class="row justify-content-center">
             <div class="col-auto">
@@ -61,12 +61,12 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-auto text-center">
-                <h5><span style="color: rgb(79, 79, 239);"> Brieuc Bastin<sup>1</sup>, Gustavo Alfonso Garcia Ricardez<sup>2</sup>, Lotfi El Hafi<sup>2</sup>, Renaud Ronsse<sup>1</sup>, Benoit Macq<sup>1</sup></span></h5>
+                <h6><span style="color: rgb(79, 79, 239);"> Brieuc Bastin<sup>1</sup>, Shoichi Hasegawa<sup>2</sup>,Lotfi El Hafi<sup>2,*</sup>,  Gustavo Alfonso Garcia Ricardez<sup>2</sup>,Jorge Solis<sup>3</sup>, Benoit Macq<sup>1</sup>, and Renaud Ronsse<sup>1</sup></span></h6>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-auto">
-                <h6><sup>1</sup>UCLouvain, <sup>2</sup>Ritsumeikan</h6>
+                <h7><sup>1</sup>Universite catholique de Louvain, <sup>2</sup>Ritsumeikan University, <sup>3</sup>Karlstad University</h7>
             </div>
         </div>
         <div class="row justify-content-center mt-3">
@@ -107,11 +107,35 @@
                 <h3>Abstract</h3>
             </div>
         </div>
+        <!--
         <div class="row">
             <div class="col-auto">
                 <p class="text-justify lead fs-6">We are aiming for Society 5.0 which emphasizes improving workplace quality of life through AI and robotics. However, current robots lack human-like situational understanding and often rely on pre-programmed tasks or supervised learning. Additionally, t here is a need for safety metrics that consider users' subjective safety perceptions. This thesis introduces GPTAlly, a system for safe human-robot collaboration using Large Language Models (LLMs) and Visual Language Models (VLMs). LLMs help infer users' subjective safety perceptions in collaborative tasks, influencing a Safety Index algorithm that adjusts safety evaluations. The system ensures robots stop to prevent harmful collisions and uses an LLM-based coding paradigm to determine subsequent actions, either autonomously or as per user preferences. The actions are implemented by an LLM, which shapes robotic arm trajectories by interpreting the natural language instructions of the user to suggest 3D poses. A user study compares safety perception scaling factors from GPT-4 with participants' estimates. The study also evaluates user satisfaction with the changes in robot behavior. The accuracy of the streamlined coding paradigm is evaluated through contextual experiments by varying the number of conditions processed by the LLM as well as paraphrasing the conditions. The satisfaction with the trajectories shaped from 3D poses is assessed through another user study. The study finds that LLMs effectively integrate human safety perceptions, with GPT-4's estimations closely matching user responses and participants expressing satisfaction with behavior changes. However, the coding paradigm's contextual accuracy can be below 50%. Finally, the robotic arm trajectories found that users preferred trajectories shaped by their natural language inputs over uninfluenced ones.</p>
             </div>
         </div>
+        -->
+    <div class="row">
+        <div class="col-auto">
+            <p class="text-justify lead fs-6">Society 5.0 marks a transformative era where the focus shifts from productivity to enhancing the quality of life in the workplace through advanced AI and robotics.
+                However, today's robots fall short of understanding their surroundings as humans do, primarily being restricted to pre-programmed tasks or dependent on supervised learning models with annotated datasets.
+                Another challenge is the lack of safety metrics that consider the subjective perception of safety of users. 
+                Ensuring safety is paramount for physical Human-Robot Interaction, but the robot must not only be safe but also perceived as safe.
+                This thesis proposes GPTAlly, a safe and adaptable system for human-robot collaboration that leverages innovative tools such as Large Language Models (LLMs) and Visual Language Models (VLMs). 
+                As LLMs can be seen as encoded representations of human language at scale, we investigate how they may be applied to infer a human's subjective perception of safety in collaborative tasks. 
+                The system facilitates adaptive safety evaluations based on users' safety perceptions by introducing a scaling factor suggested by an LLM into a Safety Index algorithm. 
+                When faced with potentially hazardous situations, such as moving too close to a user, the robot stops to prevent unwanted collisions.
+                A streamlined coding paradigm based on an LLM determines the next action to avoid remaining stuck for prolonged periods. 
+                The decision is made either autonomously or influenced by the user, who can specify their preferences for the robot’s actions in different situations using natural language.
+                The system then shapes robotic arm trajectories based on user preferences by suggesting withdrawal or new objective 3D poses, implementing the actions that the robot can choose from.
+                Through a user study, we compare a scaling factor representing the perception of safety computed with GPT-4 to an estimation given by the participants.
+                The behavior of the robot is also assessed through various experimental setups to analyze the changes in robot behavior with different perceptions of safety. 
+                The accuracy of the streamlined coding paradigm is evaluated through contextual experiments, varying the number of conditions processed and paraphrasing the conditions. 
+                The satisfaction with the trajectories shaped from 3D poses is assessed through another user study.
+                The results show that LLMs can effectively integrate human safety perceptions into safety evaluations. The perception of safety estimated by GPT-4 closely resembles the answers provided by the users, and most participants are satisfied with the changes in the robot’s behavior.
+                However, the results also indicate that the balanced accuracy of the streamlined coding paradigm in a given context can be below 50%. 
+                Finally, users preferred trajectories shaped through withdrawal methods influenced by their natural language over those without any influence.</p>
+        </div>
+    </div>
     </div>
 
 
