@@ -55,14 +55,19 @@
         </div>
         <div class="row">
             <div class="col-auto">
-                <p class="text-justify lead fs-6">The purpose of this experiment is to evaluate if LLMs can incorporate human perception of safety into safety evaluations. Given that GPT is trained on natural language, we assume it encapsulates a certain perception of safety. To ensure a safe collaboration between humans and robots, it is imperative to intervene whenever the robot poses a risk to the user. Common interventions include reducing speed and adjusting path planning. The following method combines a safety index proposed by <a href="https://link.springer.com/chapter/10.1007/978-3-319-33581-0_14" class="text-warning">Garcia et al.</a> and a multiplicative factor computed by GPT. The following is determined based on a prompt given by the user prior to the experiment (an extension to this work will offer the opportunity to change this factor while the experiment is ongoing). It ranges from 0 to 2 with 0 removing entirely the safety of the robot and 2 making the robot unable to move while a user is in its workspace. </p>
+               <p class="text-justify lead fs-6">
+                  The purpose of this experiment is to evaluate if <strong>LLMs</strong> can incorporate <strong>human perception of safety</strong> into safety evaluations. Given that <strong>GPT</strong> is trained on natural language, we assume it captures a certain perception of safety. To ensure safe collaboration between humans and robots, it is imperative to <strong>intervene</strong> whenever the robot poses a risk to the user. Common interventions include <strong>reducing speed</strong> and adjusting path planning. This method combines a <strong>safety index</strong> proposed by <a href="https://link.springer.com/chapter/10.1007/978-3-319-33581-0_14" class="text-warning">Garcia et al.</a> and a multiplicative factor computed by GPT. This is determined based on a prompt given by the user prior to the experiment (an extension to this work will allow changing this factor during the experiment). It ranges from <strong>0</strong> to <strong>2</strong>, with 0 removing safety entirely and 2 preventing the robot from moving when a user is nearby.
+               </p>
             </div>
-        </div>
-        <div class="row mb-2">
+         </div>
+         <div class="row mb-2">
             <div class="col-auto">
-                <p class="text-justify lead fs-6">The robot's objective is to collect cubes and stack them together with a human collaborator. Three experiments are presented below, each representing a different level of difficulty, with the experiment on the left considered the easiest and the one on the right the hardest. In each experiment, two extreme prompts are provided by the user: "I am very confident." and "I am very afraid of robots." These are compared to a neutral prompt that generates a GPT factor of 1.0, resulting in a baseline Safety Index similar to the one proposed by <a href="https://link.springer.com/chapter/10.1007/978-3-319-33581-0_14" class="text-warning">Garcia et al.</a> In the first experiment, the robot must stack cubes on the left side of the user, while the user stacks cubes on his right. This situation is considered easy since interaction between the robot and user is unlikely. The second experiment is more challenging as both the robot and user collect cubes from the same location (not necessarily on the same side). Finally, in the third experiment, the robot must place cubes into the user's hand. This is particularly challenging as the robot must approach the user closely while moving toward him. If the safety index is too high due to the prompt, the robot is unlikely to accomplish its task.</p>
+               <p class="text-justify lead fs-6">
+                  The <strong>robot's objective</strong> is to collect and stack cubes with a <strong>human collaborator</strong>. Three experiments are presented below, each with a different <strong>difficulty level</strong>: the experiment on the left is the easiest, while the one on the right is the hardest. In each experiment, the user provides two extreme prompts: "<strong>I am very confident</strong>" and "<strong>I am very afraid of robots</strong>." These are compared to a <strong>neutral prompt</strong> that generates a GPT factor of 1.0, resulting in a baseline Safety Index similar to the one proposed by <a href="https://link.springer.com/chapter/10.1007/978-3-319-33581-0_14" class="text-warning">Garcia et al.</a> In the <strong>first experiment</strong>, the robot stacks cubes on the left, while the user stacks on the right, minimizing interaction. The <strong>second experiment</strong> is more challenging, with both the robot and user collecting cubes from the same location. In the <strong>third experiment</strong>, the robot places cubes into the user’s hand, requiring close approach. If the safety index is too high, the robot may be unable to complete its task.
+               </p>
             </div>
-        </div>
+         </div>
+         
         <div class="row justify-content-around">
             <div class="col text-center">
                 <img src="Figures/Exp1_global.png" class="global_image_safety" alt="Responsive image">
@@ -79,9 +84,12 @@
         </div>
         <div class="row justify-content-center mt-3">
             <div class="col-auto">
-                <p class="text-justify lead fs-6">The figure below shows how the proposed DS behaves with different GPT<f><sub>f</sub></f> compared to the original DS (top left). Firstly, one can see that when the speed increases in the opposite direction (φ < pi/2 ), the DS keeps decreasing instead of increasing as shown in the original method. This is due to the imbalance in the weighted sum. Another distinctive feature is that even if the speed is close to zero, the danger score remains high for short distances as expected. The use of different GPT<f><sub>f</sub></f> changes the behavior of the DS. Indeed, one can see that the distance at which the DS reaches 0.8 (high level of danger) is shifted to the left as GPT<f><sub>f</sub></f> decreases. This means that increasing GPT<f><sub>f</sub></f> increases the distance at which the DS starts to reach a high level of alert. In other words, this can be interpreted as: “The higher GPT<f><sub>f</sub></f> is, the quicker the robot will be alert when moving toward the user”.</p>
+               <p class="text-justify lead fs-6">
+                  The figure below shows how the proposed <strong>DS</strong> behaves with different <strong>GPT<sub>f</sub></strong> values compared to the <strong>original DS</strong> (top left). Firstly, one can see that when the <strong>speed increases</strong> in the opposite direction (φ < π/2), the DS keeps decreasing instead of increasing as shown in the original method. This is due to the <strong>imbalance in the weighted sum</strong>. Another distinctive feature is that even if the speed is close to zero, the <strong>danger score</strong> remains high for short distances as expected. Using different <strong>GPT<sub>f</sub></strong> values changes the behavior of the DS. Notably, the distance at which the DS reaches 0.8 (indicating a <strong>high level of danger</strong>) shifts left as <strong>GPT<sub>f</sub></strong> decreases. This means that <strong>increasing GPT<sub>f</sub></strong> increases the distance at which the DS starts reaching a high alert level. In other words: “The higher <strong>GPT<sub>f</sub></strong> is, the quicker the robot will be alert when moving toward the user.”
+               </p>
             </div>
-        </div>
+         </div>
+         
         <div class="row justify-content-center">
             <div class="col text-center">
                 <img src="Figures/GPT_factor_v2.png" class="global_image_safety" alt="Responsive image">
@@ -89,9 +97,12 @@
         </div>
         <div class="row mt-5 mb-2 text-center">
             <div class="col text-center">
-                <p class="text-justify lead fs-6">The table below displays a non-exhaustive list of prompts that aims at understanding how GPT<f><sub>f</sub></f> varies depending on the input from the user. Each user input is also given to test subjects who estimate GPT<f><sub>f</sub></f> based on their perception of safety. The mean and the standard deviation of the answers from the user study are displayed in Table 5.1.</p>
+               <p class="text-justify lead fs-6">
+                  The table below displays a <strong>non-exhaustive list of prompts</strong> aimed at understanding how <strong>GPT<sub>f</sub></strong> varies depending on <strong>user input</strong>. Each user input is also provided to <strong>test subjects</strong> who estimate <strong>GPT<sub>f</sub></strong> based on their <strong>perception of safety</strong>. The <strong>mean</strong> and <strong>standard deviation</strong> of the responses from the user study are displayed in <strong>Table 5.1</strong>.
+               </p>
             </div>
-        </div>
+         </div>
+             
         <div class="row justify-content-center">
             <div class="col text-center">
                 <img src="Figures/Table_prompts_v2.png" class="global_image_safety" alt="Responsive image">

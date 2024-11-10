@@ -61,12 +61,12 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-auto text-center">
-                <h6><span style="color: rgb(79, 79, 239);"> Brieuc Bastin<sup>1</sup>, Shoichi Hasegawa<sup>2</sup>, Lotfi El Hafi<sup>2,*</sup>,  Gustavo Alfonso Garcia Ricardez<sup>2</sup>, Jorge Solis<sup>3</sup>, Benoit Macq<sup>1</sup>, and Renaud Ronsse<sup>1</sup></span></h6>
+                <h6><span style="color: rgb(79, 79, 239);"> Brieuc Bastin<sup>1</sup>, Shoichi Hasegawa<sup>2</sup>, Jorge Solis<sup>3</sup>, Renaud Ronsse<sup>1</sup>, Benoit Macq<sup>1</sup>, Lotfi El Hafi<sup>2</sup>,  Gustavo Alfonso Garcia Ricardez<sup>2,*</sup>, and Tadahiro Taniguchi<sup>2,4</sup></span></h6>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-auto">
-                <h7><sup>1</sup>Universite catholique de Louvain, <sup>2</sup>Ritsumeikan University, <sup>3</sup>Karlstad University</h7>
+                <h7><sup>1</sup>Universite catholique de Louvain, <sup>2</sup>Ritsumeikan University, <sup>3</sup>Karlstad University, <sup>4</sup>Kyoto University</h7>
             </div>
         </div>
         <div class="row justify-content-center mt-3">
@@ -116,23 +116,14 @@
         -->
     <div class="row">
         <div class="col-auto">
-            <p class="text-justify lead fs-6">Society 5.0 marks a transformative era where the focus shifts from productivity to enhancing the quality of life in the workplace through advanced AI and robotics.
-                However, today's robots fall short of understanding their surroundings as humans do, primarily being restricted to pre-programmed tasks or dependent on supervised learning models with annotated datasets.
-                Another challenge is the lack of safety metrics that consider the subjective perception of safety of users. Ensuring safety is paramount for physical Human-Robot Interaction, but the robot must not only be safe but also perceived as safe.
-                This thesis proposes GPTAlly, a safe and adaptable system for human-robot collaboration that leverages innovative tools such as Large Language Models (LLMs) and Visual Language Models (VLMs). 
-                As LLMs can be seen as encoded representations of human language at scale, we investigate how they may be applied to infer a human's subjective perception of safety in collaborative tasks. 
-                The system facilitates adaptive safety evaluations based on users' safety perceptions by introducing a scaling factor suggested by an LLM into a Safety Index algorithm. 
-                When faced with potentially hazardous situations, such as moving too close to a user, the robot stops to prevent unwanted collisions.
-                A streamlined coding paradigm based on an LLM determines the next action to avoid remaining stuck for prolonged periods. 
-                The decision is made either autonomously or influenced by the user, who can specify their preferences for the robot’s actions in different situations using natural language.
-                The system then shapes robotic arm trajectories based on user preferences by suggesting withdrawal or new objective 3D poses, implementing the actions that the robot can choose from.
-                Through a user study, we compare a scaling factor representing the perception of safety computed with GPT-4 to an estimation given by the participants.
-                The behavior of the robot is also assessed through various experimental setups to analyze the changes in robot behavior with different perceptions of safety. 
-                The accuracy of the streamlined coding paradigm is evaluated through contextual experiments, varying the number of conditions processed and paraphrasing the conditions. 
-                The satisfaction with the trajectories shaped from 3D poses is assessed through another user study.
-                The results show that LLMs can effectively integrate human safety perceptions into safety evaluations. The perception of safety estimated by GPT-4 closely resembles the answers provided by the users, and most participants are satisfied with the changes in the robot’s behavior.
-                However, the results also indicate that the balanced accuracy of the streamlined coding paradigm in a given context can be below 50%. 
-                Finally, users preferred trajectories shaped through withdrawal methods influenced by their natural language over those without any influence.</p>
+            <p class="text-justify lead fs-6">As robots increasingly integrate into the workplace, Human-Robot Collaboration (HRC) has become increasingly important.
+                However, most HRC solutions are based on pre-programmed tasks and use fixed safety parameters, which keeps humans out of the loop.
+                To overcome this, HRC solutions that can easily adapt to human preferences during the operation as well as their safety precautions considering the familiarity with robots are necessary.
+                In this paper, we introduce GPTAlly, a novel safety-oriented system for HRC that leverages the emerging capabilities of Large Language Models (LLMs).
+                GPTAlly uses LLMs to 1) infer users' subjective safety perceptions to modify the parameters of a Safety Index algorithm; 2) decide on subsequent actions when the robot stops to prevent unwanted collisions; and 3) re-shape the robot arm trajectories based on user instructions.
+                We subjectively evaluate the robot's behavior by comparing the safety perception of GPT-4 to the participants.
+                We also evaluate the accuracy of natural language-based robot programming of decision-making requests.
+                The results show that GPTAlly infers safety perception similarly to humans, and achieves an average of 80% of accuracy in decision-making, with few instances under 50%.</p>
         </div>
     </div>
     </div>
@@ -141,11 +132,10 @@
     <div class="container mt-2 mb-2 border rounded p-4 container-box-main">
         <div class="row justify-content-around">
             <div class="col text-center">
-                <img id="exp_image" src="Figures/main_figure_vf.png" class="img-fluid" alt="Responsive image">
+                <img id="exp_image" src="Figures/main_figure_vf2.jpg" class="img-fluid" alt="Responsive image">
             </div>
         </div>
     </div>
-
     <div class="container-red container container-box-main border rounded p-4 mt-4 ">
         <div class="row justify-content-center">
             <div class="col-auto">
@@ -154,7 +144,7 @@
         </div>
         <div class="row justify-content-center mt-3">
             <div class="col-auto">
-                <p class="text-justify lead fs-6">The first goal is to demonstrate the capacity of LLMs to estimate human safety perceptions through a scaling factor (GPT<f><sub>f</sub></f>). This is achieved by comparing the results from GPT-4 to the answers from a user study with the prompts listed <a href="safety_evaluation.html" class="text-warning">here.</a></p>
+                <p class="text-justify lead fs-6"><strong>The first goal</strong> is to demonstrate the capacity of <strong>LLMs</strong> to estimate <strong>human safety perceptions</strong> through a <strong>scaling factor</strong> (<strong>GPT<f><sub>f</sub></f></strong>). This is achieved by comparing the results from <strong>GPT-4</strong> to the answers from a <strong>user study</strong> with the prompts listed <a href="safety_evaluation.html" class="text-warning"><strong>here.</strong></a></p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -164,7 +154,7 @@
         </div>
         <div class="row mt-5 mb-2 text-center">
             <div class="col text-center">
-                <p class="text-justify lead fs-6">Through the experiment detailed <a href="safety_evaluation.html" class="text-warning">here</a>, the next goal is to demonstrate how LLMs can integrate human perception of safety into safety assessments. This is achieved by analyzing the reaction and efficiency of the robot with different GPT<f><sub>f</sub></f> across a spectrum of scenarios, ranging from easy to challenging. The following results come from the easier experiment.</p>
+                <p class="text-justify lead fs-6"><strong>Through the experiment detailed</strong> <a href="safety_evaluation.html" class="text-warning"><strong>here</strong></a>, the next goal is to demonstrate how <strong>LLMs</strong> can integrate <strong>human perception of safety</strong> into <strong>safety assessments</strong>. This is achieved by analyzing the <strong>reaction</strong> and <strong>efficiency</strong> of the robot with different <strong>GPT<f><sub>f</sub></f></strong> across a spectrum of <strong>scenarios</strong>, ranging from easy to challenging. The following results come from the <strong>easier experiment.</strong></p>
             </div>
         </div>
         <div class="row justify-content-center align-items-center">
@@ -177,8 +167,7 @@
         </div>
         <div class="row mb-2 text-center">
             <div class="col text-center">
-                <p class="text-justify lead fs-6">In the following qualitative assessment, the satisfaction of the user with the behavior of the robot with different input prompts is tested through a user study. They are
-                    requested to assess their level of satisfaction on a scale of 1 to 5 (1 is very unsatisfied and 5 is very satisfied) regarding the new behavior of the robot in comparison to its neutral behavior (where GPT<f><sub>f</sub></f> = 1.0). GPT<f><sub>f</sub></f> = 0.5 means that the user is very confident around robots and GPT<f><sub>f</sub></f> = 1.5 means that the user is very afraid of robots.</p>
+                <p class="text-justify lead fs-6"><strong>In the following qualitative assessment</strong>, the satisfaction of the user with the behavior of the robot with different input prompts is tested through a <strong>user study</strong>. They are requested to assess their level of satisfaction on a scale of <strong>1 to 5</strong> (1 is very unsatisfied and 5 is very satisfied) regarding the new behavior of the robot in comparison to its <strong>neutral behavior</strong> (where <strong>GPT<f><sub>f</sub></f> = 1.0</strong>). <strong>GPT<f><sub>f</sub></f> = 0.5</strong> means that the user is very confident around robots and <strong>GPT<f><sub>f</sub></f> = 1.5</strong> means that the user is very afraid of robots.</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -187,6 +176,7 @@
             </div>
         </div>
     </div>
+    
 
     <div class="container-green container container-box-main border rounded p-4 mt-4 ">
         <div class="row justify-content-center">
@@ -196,7 +186,7 @@
         </div>
         <div class="row justify-content-center mt-3">
             <div class="col-auto">
-                <p class="text-justify lead fs-6"> Three distinct tests are made to evaluate the viability of using LLMs as a streamlined coding paradigm. The first one consists of changing the natural language used to express the same condition on the input and thereby assessing the condition paraphrasing. Then, with language inputs that follow a similar structure, namely condition adjustment, different conditions are tested. The final step is to assess the scalability of the condition (condition scalability), gauging the system's capability to effectively manage increasingly intricate conditions. An extensive description of the experiment can be found <a href="decision_making.html" class="text-warning">here.</a></p>
+                <p class="text-justify lead fs-6">Three distinct tests are made to evaluate the viability of using <strong>LLMs</strong> as a <strong>streamlined coding paradigm</strong>. The first one consists of changing the <strong>natural language</strong> used to express the same condition on the input and thereby assessing the condition <strong>paraphrasing</strong>. Then, with language inputs that follow a similar structure, namely <strong>condition adjustment</strong>, different conditions are tested. The final step is to assess the <strong>scalability</strong> of the condition (<strong>condition scalability</strong>), gauging the system's capability to effectively manage increasingly intricate conditions. An extensive description of the experiment can be found <a href="decision_making.html" class="text-warning"><strong>here.</strong></a></p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -205,16 +195,16 @@
             </div>
         </div>
     </div>
-
+    
     <div class="container-black container container-box-main border rounded p-4 mt-4 ">
         <div class="row justify-content-center">
             <div class="col-auto">
-                <h3>Robot Controller: withdrawal</h3>
+                <h3>Robot Controller: Withdrawal</h3>
             </div>
         </div>
         <div class="row justify-content-center mt-3">
             <div class="col-auto">
-                <p class="text-justify lead fs-6"> The objective of this experiment is to evaluate the use of LLMs to shape robotic arm trajectories. The methods' performance was evaluated through a user study, where a total of 150 data points were collected from each of the 30 participants. Each participant was asked to rate the withdrawal methods on a 1-5 Likert scale, based on a given natural language input. The following figure summarizes the distribution of the answers for each method. Withdrawal 1 represents the withdrawal method proposed by <a href="https://ieeexplore.ieee.org/document/6696490" class="text-warning">Garcia et al.</a>, Withdrawal 2 is the same method with the parking position modified by GPT-4, and Withdrawal 3 is the method where GPT-4 suggests a new withdrawal position directly.</p>
+                <p class="text-justify lead fs-6">The objective of this experiment is to evaluate the use of <strong>LLMs</strong> to shape <strong>robotic arm trajectories</strong>. The methods' performance was evaluated through a <strong>user study</strong>, where a total of 150 data points were collected from each of the 30 participants. Each participant was asked to rate the withdrawal methods on a <strong>1-5 Likert scale</strong>, based on a given <strong>natural language input</strong>. The following figure summarizes the distribution of the answers for each method. <strong>Withdrawal 1</strong> represents the withdrawal method proposed by <a href="https://ieeexplore.ieee.org/document/6696490" class="text-warning"><strong>Garcia et al.</strong></a>, <strong>Withdrawal 2</strong> is the same method with the parking position modified by <strong>GPT-4</strong>, and <strong>Withdrawal 3</strong> is the method where <strong>GPT-4</strong> suggests a new withdrawal position directly.</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -224,7 +214,7 @@
         </div>
         <div class="row mt-5 mb-2 text-center">
             <div class="col text-center">
-                <p class="text-justify lead fs-6">In the same user study, participants were asked to select their preferred withdrawal method if they were in the user's situation. On the left, the figure displays the average satisfaction level, ranging from 1 (very unsatisfied) to 5 (very satisfied). A Kruskal–Wallis test and two Mann–Whitney U tests were conducted to examine the differences between the means. In the same user study, participants were asked to select their preferred withdrawal method if they were in the user's situation as shown on the right. Unlike the previous question where they had to assess their satisfaction, they were asked to decide on only one favorite.</p>
+                <p class="text-justify lead fs-6">In the same user study, participants were asked to select their <strong>preferred withdrawal method</strong> if they were in the user's situation. On the left, the figure displays the <strong>average satisfaction level</strong>, ranging from 1 (very unsatisfied) to 5 (very satisfied). A <strong>Kruskal–Wallis test</strong> and two <strong>Mann–Whitney U tests</strong> were conducted to examine the differences between the means. In the same user study, participants were asked to select their <strong>favorite withdrawal method</strong> if they were in the user's situation, as shown on the right. Unlike the previous question where they had to assess their satisfaction, they were asked to decide on only one <strong>favorite</strong>.</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -235,10 +225,10 @@
                 <img id="exp_image" src="Figures/withdrawal_choices_v3.png" class="img-fluid" alt="Responsive image">
             </div>
         </div>
-
+    
         <div class="row mt-5 mb-2 text-center">
             <div class="col text-center">
-                <p class="text-justify lead fs-6">The users were also asked to assess the significance of each factor for their previous answers. The following figure displays the distribution of their responses. There were three factors they had to evaluate: safety, which refers to the robot moving to a safer location; compliance, which indicates the robot following the user's command; and human-like behavior, which involves the robot exhibiting behavior resembling that of a human. </p>
+                <p class="text-justify lead fs-6">The users were also asked to assess the significance of each factor for their previous answers. The following figure displays the distribution of their responses. There were three factors they had to evaluate: <strong>safety</strong>, which refers to the robot moving to a <strong>safer location</strong>; <strong>compliance</strong>, which indicates the robot following the user's command; and <strong>human-like behavior</strong>, which involves the robot exhibiting behavior resembling that of a human.</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -248,7 +238,7 @@
         </div>
         <div class="row mt-5 mb-2 text-center">
             <div class="col text-center">
-                <p class="text-justify lead fs-6">Finally, the distributions from the users were divided into three groups: students from UCLouvail who did not receive an engineering education (UCLouvain-Other), students from UCLouvain who did receive an engineering education (UCLouvain-Engineer), and students from Ritsumeikan who received engineering education (Ritsumeikan-Engineer). UCLouvain students study in Belgium, while Ritsumeikan students study in Japan.</p>
+                <p class="text-justify lead fs-6">Finally, the distributions from the users were divided into three groups: <strong>students from UCLouvain</strong> who did not receive an <strong>engineering education</strong> (<strong>UCLouvain-Other</strong>), students from <strong>UCLouvain</strong> who did receive an <strong>engineering education</strong> (<strong>UCLouvain-Engineer</strong>), and students from <strong>Ritsumeikan</strong> who received engineering education (<strong>Ritsumeikan-Engineer</strong>). <strong>UCLouvain</strong> students study in <strong>Belgium</strong>, while <strong>Ritsumeikan</strong> students study in <strong>Japan</strong>.</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -257,21 +247,21 @@
             </div>
         </div>
     </div>
-
+    
     <div class="container-black container container-box-main border rounded p-4 mt-4 mb-4 ">
         <div class="row justify-content-center">
             <div class="col-auto">
-                <h3>Robot Controller: Change Objective</h3>
+                <h3><strong>Robot Controller: Change Objective</strong></h3>
             </div>
         </div>
         <div class="row justify-content-center mt-3">
             <div class="col-auto">
-                <p class="text-justify lead fs-6"> With the same objective of evaluating the use of LLMs to shape trajectories, the change in objective is evaluated by comparing the responses provided by GPT-4 and users in a user study when given the same instructions, such as "Pick a block between me and the robot". The user, ("Me") is positioned in (0.7, 0.0) and the robot is positioned in (0.1, 0.0). In red is the answer from GPT-4 and the frequency indicates the number of times a user chose this block relative to the maximum number of times any block was chosen. The experiment is explained more in detail <a href="functions.html" class="text-warning">here.</a></p>
+                <p class="text-justify lead fs-6">With the same objective of evaluating the use of <strong>LLMs</strong> to shape <strong>trajectories</strong>, the change in objective is evaluated by comparing the responses provided by <strong>GPT-4</strong> and users in a <strong>user study</strong> when given the same instructions, such as "<strong>Pick a block between me and the robot</strong>". The user ("<strong>Me</strong>") is positioned in (0.7, 0.0) and the robot is positioned in (0.1, 0.0). In red is the answer from <strong>GPT-4</strong> and the frequency indicates the number of times a user chose this block relative to the maximum number of times any block was chosen. The experiment is explained more in detail <a href="functions.html" class="text-warning"><strong>here.</strong></a></p>
             </div>
         </div>
         <div class="row mt-1 mb-2 text-center">
             <div class="col text-center">
-                <p class="text-justify lead fs-6"> On the left side, the prompt provided to both the user and GPT-4 is “Take a block that is close to me”. On the right side, the prompt is “Take a block that is close to the robot”. </p>
+                <p class="text-justify lead fs-6">On the left side, the prompt provided to both the user and <strong>GPT-4</strong> is "<strong>Take a block that is close to me</strong>". On the right side, the prompt is "<strong>Take a block that is close to the robot</strong>".</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -284,7 +274,7 @@
         </div>
         <div class="row mt-5 mb-2 text-center">
             <div class="col text-center">
-                <p class="text-justify lead fs-6">On the left side, the prompt is “Take a block on the left”, and on the right side, the prompt is “Take a cube on the right”.</p>
+                <p class="text-justify lead fs-6">On the left side, the prompt is "<strong>Take a block on the left</strong>", and on the right side, the prompt is "<strong>Take a cube on the right</strong>".</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -297,7 +287,7 @@
         </div>
         <div class="row mt-5 mb-2 text-center">
             <div class="col text-center">
-                <p class="text-justify lead fs-6">On the left side, the prompt is “Take a block far from the robot”, and on the right side, the prompt is “Take one of the furthest block from the robot”. </p>
+                <p class="text-justify lead fs-6">On the left side, the prompt is "<strong>Take a block far from the robot</strong>", and on the right side, the prompt is "<strong>Take one of the furthest block from the robot</strong>".</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -309,6 +299,7 @@
             </div>
         </div>
     </div>
+    
     
 <!-- Bootstrap Bundle JS -->
 <script

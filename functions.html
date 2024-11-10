@@ -55,9 +55,16 @@
 
         <div class="row mb-2 mt-3">
             <div class="col-auto">
-                <p class="text-justify lead fs-6">The objective of this experiment is to evaluate the use of LLMs to shape trajectories by suggesting 3D poses based on natural language input. This hypothesis is answered by experimenting with the withdrawal and change of objective methods. For the first experiment, the withdrawal method is tested with a variety of prompts. These prompts express positions relative to the user's location or other objects on the board. The second experiment, akin to the first, aims to gauge satisfaction with the change of objective based on user input. Each experiment is evaluated through a user base study of x participants who rate their satisfaction with GPT-4's responses for the two functions. The task involves the robot picking up a cube positioned on the left side of the user and relocating it between the user's hands. Throughout the experiment, the user's left-hand serves as the closest point and thus represents the obstacle from which the robot attempts to withdraw. Trajectory points (without any withdrawal) are recorded along with the speed of the robot and safety indexes. Based on this data, three distinct trajectories are computed. Two types of prompts are subsequently tested: commands relative to the user and commands relative to objects on the table. For instance, a command relative to the user might be: “Move to the right”, while a command relative to objects could be: “Move closer to the stack”. For each prompt, the three withdrawal methods are tested for three coordinates along the trajectory (9 trajectories per prompt). One at the beginning of the trajectory, one in the middle, and one at the end. On the video, one can see an example of a withdrawal trajectoriy for the point in the middle of the trajectory for the prompt “Move to the left”. For the examples below, withdrawal 1 (in orange) is the original withdrawal method presented by <a href="https://ieeexplore.ieee.org/document/6696490" class="text-warning">Garcia et al.</a>, withdrawal 2 (in red) is the method where GPT suggests the position of withdrawal, and withdrawal 3 (in green) is a method where GPT suggests a new parking position (mix between GPT-4 and withdrawal 1).</p>
+               <p class="text-justify lead fs-6">
+                  The objective of this experiment is to evaluate the use of <strong>LLMs</strong> to shape <strong>trajectories</strong> by suggesting <strong>3D poses</strong> based on natural language input. This hypothesis is tested by experimenting with the <strong>withdrawal</strong> and <strong>change of objective</strong> methods. In the first experiment, the <strong>withdrawal method</strong> is tested with various prompts that express positions relative to the user's location or other objects on the board. The second experiment, similar to the first, aims to gauge <strong>satisfaction</strong> with the change of objective based on user input. Each experiment is evaluated through a user study with <strong>20 participants</strong>, who rate their satisfaction with <strong>GPT-4's responses</strong> for these functions. 
+         
+                  The task involves the robot picking up a cube on the <strong>left side</strong> of the user and moving it between the user's hands. During the experiment, the user's <strong>left hand</strong> serves as the obstacle, representing the closest point from which the robot withdraws. <strong>Trajectory points</strong> (without withdrawal) are recorded, along with the robot’s speed and safety indexes. Based on this data, three distinct trajectories are computed. Two types of <strong>prompts</strong> are subsequently tested: commands relative to the user and commands relative to objects on the table. For example, a user-relative command might be: “<strong>Move to the right</strong>,” while an object-relative command could be: “<strong>Move closer to the stack</strong>.” 
+         
+                  For each prompt, the three withdrawal methods are tested at three coordinates along the trajectory (9 trajectories per prompt): one at the beginning, one in the middle, and one at the end. The video displays an example of a withdrawal trajectory for a middle trajectory point with the prompt “<strong>Move to the left</strong>.” In the examples below, <strong>withdrawal 1</strong> (orange) is the original method presented by <a href="https://ieeexplore.ieee.org/document/6696490" class="text-warning">Garcia et al.</a>, <strong>withdrawal 2</strong> (red) uses a position suggested by GPT, and <strong>withdrawal 3</strong> (green) combines GPT-4 suggestions with the original method.
+               </p>
             </div>
-        </div>
+         </div>
+         
 
     <div class="container p-4 mt-4 ">
         <div class="row justify-content-center">
@@ -123,9 +130,12 @@
         </div>
         <div class="row mb-2 mt-4">
             <div class="col-auto">
-                <p class="text-justify lead fs-6"> The robot is stopped while picking up a cube, which is not displayed to the user as depicted in the figure above. There are 25 cubes on the table from which the robot can choose to change objective based on the user input. Similar to the first experiment, the user's input can consist of commands either relative to the user or relative to objects in the scene. For instance, a command relative to the user might be: “Don't take cubes on the right”, while a command relative to other objects could be: “Take cubes that are close to the robot”. </p>
+               <p class="text-justify lead fs-6">
+                  The <strong>robot</strong> is stopped while picking up a cube, which is not visible to the user as shown in the figure above. There are <strong>25 cubes</strong> on the table, from which the robot can choose to <strong>change objective</strong> based on user input. Similar to the first experiment, the user’s input can include commands either <strong>relative to the user</strong> or <strong>relative to objects</strong> in the scene. For example, a user-relative command might be: “<strong>Don't take cubes on the right</strong>,” while an object-relative command could be: “<strong>Take cubes that are close to the robot</strong>.”
+               </p>
             </div>
-        </div>
+         </div>
+         
         <div class="row justify-content-around">
             <div class="col text-center">
                 <img id="exp_image" src="Figures/change_objective_example.png" class="img-fluid global_image_safety" alt="Responsive image">

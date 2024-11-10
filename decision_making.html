@@ -52,14 +52,19 @@
         </div>
         <div class="row">
             <div class="col-auto">
-                <p class="text-justify lead fs-6">An additional objective of the system is to assess the viability of utilizing LLMs for decision-making in HRC by providing a streamlined coding paradigm. This approach leverages the emergent properties of LLMs by diminishing the reliance on explicit condition descriptions and by using natural language to describe them. The hypothesis is assessed using the decision-making module. When the Danger Score (DS) surpasses a threshold of 0.8, the robot stops. Then, GPT-4 makes an informed decision on the next action: whether to wait, withdraw, or change the objective. By providing additional input to the prompt, one can influence the decision-making process. </p>
+               <p class="text-justify lead fs-6">
+                  An additional objective of the system is to assess the viability of utilizing <strong>LLMs</strong> for <strong>decision-making</strong> in <strong>HRC</strong> by providing a streamlined coding paradigm. This approach leverages the <strong>emergent properties</strong> of LLMs by reducing reliance on explicit conditions and instead using <strong>natural language</strong> descriptions. The hypothesis is assessed through the <strong>decision-making module</strong>. When the <strong>Danger Score (DS)</strong> surpasses a <strong>threshold of 0.8</strong>, the robot stops. Then, <strong>GPT-4</strong> decides the next action: whether to wait, withdraw, or change the objective. By adding input to the prompt, one can influence the decision-making process.
+               </p>
             </div>
-        </div>
-        <div class="row mb-2">
+         </div>
+         <div class="row mb-2">
             <div class="col-auto">
-                <p class="text-justify lead fs-6">To assess this influence and evaluate its accuracy, the robot is halted in 24 different situations. These situations manipulate the input parameters necessary for the decision-making process. Text constraints imposed on input variables within the prompt allow the evaluation of decision-making accuracy by ensuring that the output aligns with these constraints. Each unique combination of parameters is examined, resulting in a total of 24 experiments being conducted. The first parameter that varies is the acction that the robot is doing: picking or placing a cube. Then, the distances between the end-effector of the robot and the closest point on the human body are categorized into three states: short where dist < 0.2m, middle where 0.2m < dist < 0.4m, or long where dist > 0.4m. The various layouts shown below aim to influence the decision of GPT-4 by varying the position and number of other blocks available for pick-up on the table.</p>
+               <p class="text-justify lead fs-6">
+                  To assess this influence and evaluate its <strong>accuracy</strong>, the robot is halted in <strong>24 different situations</strong>. These situations vary the <strong>input parameters</strong> used in decision-making. <strong>Text constraints</strong> imposed on input variables allow the evaluation of accuracy by ensuring output alignment with these constraints. Each parameter combination is examined, resulting in 24 experiments. The first varying parameter is the <strong>robot's action</strong>: either picking or placing a cube. Distances between the robot’s <strong>end-effector</strong> and the nearest point on the human body are categorized as <strong>short</strong> (dist < 0.2m), <strong>middle</strong> (0.2m < dist < 0.4m), or <strong>long</strong> (dist > 0.4m). The layouts below aim to influence <strong>GPT-4's decision</strong> by adjusting the position and number of other blocks available for pick-up on the table.
+               </p>
             </div>
-        </div>
+         </div>
+         
         <div class="row justify-content-around">
             <div class="col text-center">
                 <img id="exp_image" src="Figures/layout.png" class="img-fluid global_image_safety" alt="Responsive image">
@@ -67,9 +72,12 @@
         </div>
         <div class="row mb-2 mt-4">
             <div class="col-auto">
-                <p class="lead fs-6">GPT-4 receives the current state informations and based on the following he decides which action is most suited for the situation. The decision given by GPT-4 is displayed as a prompt in the container above. From left to right: wait, withdraw and change Objective.</p>
+               <p class="lead fs-6">
+                  <strong>GPT-4</strong> receives the <strong>current state information</strong> and, based on this, decides which action is most suited for the situation. The decision made by GPT-4 is displayed as a prompt in the container above. From left to right: <strong>wait</strong>, <strong>withdraw</strong>, and <strong>change Objective</strong>.
+               </p>
             </div>
-        </div>
+         </div>
+         
         <div class="row justify-content-around">
             <div class="col text-center">
                 <img id="exp_image" src="Figures/decisions_v2.png" class="img-fluid" alt="Responsive image">
